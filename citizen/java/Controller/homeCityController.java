@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Entity.DistrictA2;
+import Entity.DistrictA3;
+import Entity.VillageB2;
 import Json.JSONObject;
 import Model.DAO;
 
@@ -36,11 +37,12 @@ public class homeCityController extends HttpServlet {
 				data += line;
 			}
 			JSONObject obj = new JSONObject(data);
-			int cityID = obj.getInt("cityID");
+			String cityID = obj.getString("cityID");
+			System.out.println(cityID);
 			int index = 0;
-			List<DistrictA2> list = dao.getAllDistrictByCityID(cityID);
+			List<DistrictA3> list = dao.getAllDistrictByType(cityID, "cityID");
 			String[] dataJSON = new String[list.size()];
-			for (DistrictA2 d : list) {
+			for (DistrictA3 d : list) {
 				dataJSON[index] = d.toJSON();
 				index++;
 			}

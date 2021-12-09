@@ -1,3 +1,5 @@
+<%@page import="Entity.Citizen"%>
+<%@page import="java.util.List"%>
 <%@page import="Entity.Cadres"%>
 <%@page import="Model.ModelCadres"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -19,19 +21,19 @@
         </div>
         <ul class = "navigation">
             <li class = "home">
-                <span class = "btn_navi open"><i class="fas fa-home"></i>Trang chủ</span>
+                <span class = "btn_navi open" onclick = "clickTabMenu(this, 'home')"><i class="fas fa-home"></i>Trang chủ</span>
             <li class = "input">
-                <span class = "btn_navi">
+                <span class = "btn_navi" onclick = "clickTabMenu(this, 'input')">
                     <i class="fas fa-edit"></i>Nhập liệu
                 </span>
             </li>
             <li class = "view">
-                <span class = "btn_navi">
+                <span class = "btn_navi" onclick = "clickTabMenu(this, 'cadres')">
                     <i class="fas fa-street-view"></i>Cấp quyền truy cập
                 </span>
             </li>
             <li class="info_user">
-                <span class = "btn_navi">
+                <span class = "btn_navi" onclick = "clickTabMenu(this, 'citizen')">
                     <i class="fas fa-users"></i>Thông tin người dân
                 </span>
             </li>
@@ -45,7 +47,7 @@
             </span>
             <span class = "account">
                 <img src="resources/img/avatar.jpg" alt="_self">
-                <p>${sessionScope.account.name }<i class="fas fa-chevron-down"></i></p>
+                <p>${sessionScope.account.username }<i class="fas fa-chevron-down"></i></p>
             </span>
             <div class = "drop_account">
                 <p>Welcome!</p>
@@ -112,56 +114,54 @@
             <div class="input_content">
                 <div class = "input_content_grid">
                     <h1>Phiếu khai báo thông tin cá nhân</h1>
-                    <form action="#">
-                        <div class = "name">
-                            <label for="@">Tên </label>
-                            <input type="text" name = "name" id = "name">
+                    <div class = "name">
+                        <label for="@">Họ và tên </label>
+                        <input type="text" name = "name" id = "name">
+                    </div>
+                    <div class = "dob">
+                        <label for="@">Ngày sinh </label>
+                        <input type="date" name="dob" id="dob">
+                    </div>
+                    <div class = "numberID">
+                        <label for="@">Số CMND</label>
+                        <input type="text" name = "numberID" id = "numberID">
+                    </div>
+                    <div class = "gender">
+                        <label for="gender">Giới tính</label>
+                        <div>
+                            <input type="radio" name="female" id="female">
+                            <label for="female">Nữ</label>
+                            <input type="radio" name="female" id="male">
+                            <label for="male">Nam</label>
                         </div>
-                        <div class = "surname">
-                            <label for="@">Họ </label>
-                            <input type="text" name = "surname" id = "surname">
-                        </div>
-                        <div class = "date">
-                            <label for="@">Ngày sinh </label>
-                            <input type="date" name="date" id="date">
-                        </div>
-                        <div class = "sex">
-                            <label for="sex">Giới tính</label>
-                            <div>
-                                <input type="radio" name="sex" id="female">
-                                <label for="female">Nữ</label>
-                                <input type="radio" name="sex" id="male">
-                                <label for="male">Nam</label>
-                            </div>
-                        </div>
-                        <div class = "phone">
-                            <label for="@">Số điện thoại</label>
-                            <input type="text" name = "phone" id = "phone">
-                        </div>
-                        <div class = "cmt">
-                            <label for="@">Số CMND</label>
-                            <input type="text" name = "cmt" id = "cmt">
-                        </div>
-                        <div class = "my_img">
-                            <label for="@">Ảnh thẻ</label>
-                            <input type="file" name = "my_img" id = "my_img" aria-label="File browser example">
-                        </div>
-                        <div class="address">
-                            <label for="@">Địa chỉ thường trú</label>
-                            <input type="text" name="address" id="address">
-                        </div>
-                        <div class="address_live">
-                            <label for="@">Địa chỉ hiện nay</label>
-                            <input type="text" name="address_live" id="address_live">
-                        </div>
-                        <div class = "more">
-                            <label for="@">Mô tả bản thân</label>
-                            <textarea name="more" id="more"></textarea>
-                        </div>
-                        <div class = "submit">
-                            <button type="submit">Nhập</button>
-                        </div>
-                    </form>
+                    </div>
+                    <div class = "poo">
+                        <label for="@">Quê quán</label>
+                        <input type="text" name = "poo" id = "poo">
+                    </div>
+                    <div class = "permanent">
+                        <label for="@">Địa chỉ thường trú</label>
+                        <input type="text" name = "permanent" id = "permanent">
+                    </div>
+                    <div class="temporary">
+                        <label for="@">Địa chỉ tạm trú</label>
+                        <input type="text" name="temporary" id="temporary">
+                    </div>
+                    <div class="ethnicGroup">
+                        <label for="@">Tôn giáo</label>
+                        <input type="text" name="ethnicGroup" id="ethnicGroup">
+                    </div>
+                    <div class="eduLevel">
+                        <label for="@">Trình độ văn hóa</label>
+                        <input type="text" name="eduLevel" id="eduLevel">
+                    </div>
+                    <div class="job">
+                        <label for="@">Nghề nghiệp</label>
+                        <input type="text" name="job" id="job">
+                    </div>
+                    <div class = "submit" onclick = "submitFromPutCitizen()">
+                        <button type="submit">Nhập</button>
+                    </div>
                 </div>
             </div>
             <div class="input_footer">
@@ -176,40 +176,28 @@
 
         <div class="view">
             <div class = "view_header">
-	            <%
-	            	Cadres cadres = (Cadres) session.getAttribute("account");
-	            	String address = ModelCadres.convertRankToAddress(cadres.getUsername());
-	            %>
-                <p>Danh sách cán bộ trong <%=address %></p>
+                <p>Danh sách cán bộ</p>
                 <span>CitizenV<i class="fas fa-chevron-right"></i>Cấp quyền truy cập</span>
             </div>
             <div class="view_content">
-                <div class = "content_top">
-                    <div class = "count">
-                        <label>Giới hạn số lượng bảng</label>
-                        <select class="content_top_count" id="content_top_count">
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="200">200</option>
-                        </select>
+            	<div class = "content_top">
+            		<%
+            			String rank = "${sessionScope.account.rank }";
+            		%>
+                    <div class = "content_select" ${sessionScope.account.rank == 'A0' ? 'style=\"flex-basis: 100%;\"' : 'style="flex-basis: 75%;"' }>
+                        <div class = "count">
+                            <label>Số lượng</label>
+                            <select class="content_top_count">
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select>
+                        </div>
+                        <div class="search_select">
+                        </div>
                     </div>
-                    <div class="search">
-                        <label for="">Tỉnh/Thành phố</label>
-                        <select class="search_city" onchange="selectSearchCity(this)">
-                        	<option value="0">Tất cả</option>
-	                        <c:forEach items = "${listcity }" var = "o">
-	                        	<option value="${o.cityID }">${o.nameCity }</option>
-	                        </c:forEach>
-                        </select>
-                        <label for="">Quận/Huyện</label>
-                        <select class="search_district">
-                            <option value="10">Tất cả</option>
-                        </select>
-                        <label for="">Xã/Phường</label>
-                        <select class="search_commune">
-                            <option value="10">Tất cả</option>
-                        </select>
+                    <div class="search" ${sessionScope.account.rank == 'A0' ? 'style=\"flex-basis: 100%; margin-top: 20px;\"' : 'style="flex-basis: 25%;"' }>
                         <label for="@">Tìm kiếm</label>
                         <input type="text" name="view_search" id="view_search">
                     </div>
@@ -217,17 +205,10 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID
+                            <th>STT
                                 <span>
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
-                            </th>
-                            <th>Tên cán bộ
-                                <span>
-                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
-                                </span>
-                            </th>
-                            <th>Điện thoại
                             </th>
                             <th>Tài khoản
                                 <span>
@@ -235,7 +216,14 @@
                                 </span>
                             </th>
                             <th>Mật khẩu</th>
-                            <th>Thời gian nhập
+                            <th>Cấp bậc
+                                <span>
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
+                            <th>Khu vực quản lí</th>
+                            <th>Trạng thái</th>
+                            <th>Thời gian cấp quyền
                                 <span>
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
@@ -244,40 +232,38 @@
                         </tr>
                     </thead>
                     <tbody>
-                    	<c:forEach items = "${listcadres }" var = "o" begin = "0" end = "24">
-                    		<tr>
-	                            <td>${o.ordinal }</td>
-	                            <td>
-	                                <span>
-	                                    <p>${o.name }</p>
-	                                    <p>${o.email }</p>
-	                                </span>
-	                            </td>
-	                            <td>${o.numberPhone }</td>
-	                            <td>${o.username }</td>
-	                            <td>${o.password }</td>
-	                            <td>${o.time }</td>
-	                            <td class = "action">
-	                                <div>
-	                                    <i class="fas fa-ellipsis-h"></i>
-	                                    <ul class = "">
-	                                        <li><a href="#"><i class="fas fa-street-view"></i>Cấp quyền</a></li>
-	                                        <li><a href="#"><i class="far fa-edit"></i>Sửa đổi</a></li>
-	                                        <li><a href="#"><i class="far fa-trash-alt"></i>Xóa</a></li>
-	                                        <li><a href="#"><i class="fas fa-user-tag"></i>Thông tin</a></li>
-	                                    </ul>
-	                                </div>
-	                            </td>
-	                        </tr>
-                    	</c:forEach>
+                    	<% 
+                    		List<Cadres> listCadres = (List<Cadres>) request.getAttribute("listcadres");
+                        	int sizecadres = listCadres.size() >= 25 ? 25 : listCadres.size();
+                        	for(int i=0; i<sizecadres; i++) {
+                        		String status = (listCadres.get(i).isStatus()) ? "Tự do" : "Khóa";
+                        	
+                    	%>
+                   		<tr>
+                            <td><%=(i+1) %></td>
+                            <td><%=listCadres.get(i).getUsername() %></td>
+                            <td><%=listCadres.get(i).getPassword() %></td>
+                            <td><%=listCadres.get(i).getRank() %></td>
+                            <td><%=listCadres.get(i).getManageArea() %></td>
+                            <td><%=status %></td>
+                            <td><%=listCadres.get(i).getAccessTime() %></td>
+                            <td class = "action">
+                                <div>
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    <ul class = "">
+                                        <li><a href="#"><i class="fas fa-street-view"></i>Cấp quyền</a></li>
+                                        <li><a href="#"><i class="far fa-edit"></i>Sửa đổi</a></li>
+                                        <li><a href="#"><i class="far fa-trash-alt"></i>Xóa</a></li>
+                                        <li><a href="#"><i class="fas fa-user-tag"></i>Thông tin</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <%} %>
                     </tbody>
                 </table>
                 <div class="content_bot">
-               		<%
-                       	int size = (int) request.getAttribute("sizecadres");
-                       	size = size/25;
-                    %>
-                    <p>Biểu diễn 1 đến 25 của ${sizecadres } cán bộ</p>
+                    <p>Biểu diễn <span class = "count_left">1</span> đến <span class = "count_right"><%=sizecadres %></span> của <span class = "size">${sizecadres }</span> cán bộ</p>
                     <div>
                     </div>
                 </div>
@@ -299,16 +285,56 @@
             </div>
             <div class="info_list">
                 <div class = "content_top">
-                    <div class = "count">
-                        <label>Giới hạn số lượng bảng</label>
-                        <select name="content_top_count" id="content_top_count" onblur='this.size=0;' onchange='this.size=1;'>
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                        </select>
+                    <div class = "content_select" ${sessionScope.account.rank == 'A1' ? 'style=\"flex-basis: 100%;\"' : 'style="flex-basis: 75%;"' }>
+                        <div class = "count">
+                            <label>Số lượng</label>
+                            <select class="content_top_count">
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select>
+                        </div>
+                        <div class="search_select">
+                        	<c:if test = "${sessionScope.account.rank == 'A1' }">
+		                    	<label for="">Tỉnh/Thành phố</label>
+		                        <select class="search_city">
+		                        	<option value="0">Tất cả</option>
+			                        <c:forEach items = "${listcity }" var = "o">
+			                        	<option value="${o.cityID }">${o.nameCity }</option>
+			                        </c:forEach>
+		                        </select>
+		                    </c:if>
+		                    <c:if test = "${sessionScope.account.rank == 'A2' || sessionScope.account.rank == 'A1' }">
+		                    	<label for="">Quận/Huyện</label>
+		                        <select class="search_district">
+		                            <option value="0">Tất cả</option>
+		                            <c:forEach items = "${listdistrict }" var = "o">
+			                        	<option value="${o.districtID }">${o.nameDistrict }</option>
+			                        </c:forEach>
+		                        </select>
+		                    </c:if>
+		                    <c:if test = "${sessionScope.account.rank == 'A3' || sessionScope.account.rank == 'A2' || sessionScope.account.rank == 'A1' }">
+		                    	<label for="">Xã/Phường</label>
+		                        <select class="search_commune">
+		                            <option value="0">Tất cả</option>
+		                            <c:forEach items = "${listcommune }" var = "o">
+			                        	<option value="${o.communeID }">${o.nameCommune }</option>
+			                        </c:forEach>
+		                        </select>
+		                    </c:if>
+		                    <c:if test = "${sessionScope.account.rank == 'B1' || sessionScope.account.rank == 'A3' || sessionScope.account.rank == 'A2' || sessionScope.account.rank == 'A1' }">
+		                    	<label for="">Đường/Thôn</label>
+		                    	<select class="search_village">
+		                            <option value="0">Tất cả</option>
+		                            <c:forEach items = "${listvillage }" var = "o">
+			                        	<option value="${o.villageID }">${o.nameVillage }</option>
+			                        </c:forEach>
+		                        </select>
+		                    </c:if>
+                        </div>
                     </div>
-                    <div class="search">
+                    <div class="search" ${sessionScope.account.rank == 'A1' ? 'style=\"flex-basis: 100%; margin-top: 20px;\"' : 'style="flex-basis: 25%;"' }>
                         <label for="@">Tìm kiếm</label>
                         <input type="text" name="view_search" id="view_search">
                     </div>
@@ -321,44 +347,41 @@
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
                             </th>
-                            <th>Thông tin
+                            <th>Họ tên
                                 <span>
                                     <i class="fas fa-long-arrow-alt-up open"></i><i class="fas fa-long-arrow-alt-down open"></i>
                                 </span>
                             </th>
-                            <th>Điện thoại</th>
+                            <th>Ngày sinh</th>
                             <th>CMND</th>
-                            <th>Địa chỉ</th>
-                            <th>Thời gian nhập
-                                <span>
-                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
-                                </span>
-                            </th>
+                            <th>Địa chỉ thường trú</th>
+                            <th>Tôn giáo</th>
+                            <th>Trình độ văn hóa</th>
+                            <th>Nghề nghiệp</th>
                             <th>Tùy chọn</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>#1</td>
-                            <td class = "info">
-                                <img src="resources/img/avatar.jpg" alt="">
-                                <span>
-                                    <p>Mark Zugkerburg</p>
-                                    <p>markzugkerburg@gmail.com</p>
-                                </span>
-                            </td>
-                            <td>0123456789</td>
-                            <td>01234567891011</td>
-                            <td class = "info_list_address">
-                                <p>Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội</p>
-                            </td>
-                            <td>22/11/2021 05:35:00</td>
-                            <td><i class="fas fa-ellipsis-h"></i></td>
-                        </tr>
+                    	<c:forEach items = "${listcitizen }" var = "o">
+	                    	<tr>
+	                            <td>${o.ordinal }</td>
+	                            <td class = "info">${o.name }</td>
+	                            <td>${o.dob }</td>
+	                            <td>${o.numberID }</td>
+	                            <td class = "info_list_address">
+	                                <p>${o.permanent }</p>
+	                            </td>
+	                            <td>${o.ethnicGroup }</td>
+	                            <td>${o.eduLevel }</td>
+	                            <td>${o.job }</td>
+	                            <td><i class="fas fa-ellipsis-h"></i></td>
+	                        </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
                 <div class="content_bot">
-                    <p>Biểu diễn 1 đến 10 của n người dân</p>
+                    <p>Biểu diễn <span class = "count_left">1</span> đến <span class = "count_right">${count }</span> của <span class = "size">${sizecitizen }</span> người dân</p>
+                    
                     <div>
                     </div>
                 </div>
@@ -448,8 +471,23 @@
             </div>
         </div>-->
     </div>
+    <%
+    	int size = (int) request.getAttribute("sizecadres");
+    	int sizecitizen = (int) request.getAttribute("sizecitizen");
+    	int totalPage = size/25 + 1;
+    	int totalPageCitizen = sizecitizen/25 + 1;
+    %>
     <script>
-		let totalPage = parseInt("<%=size %>");
+		let totalPage = 0;
+		let totalPageCitizen = parseInt("<%=totalPageCitizen %>");
+		let totalPageCadres = parseInt("<%=totalPage %>");
+		let rank = "${sessionScope.account.rank }";
+		let varPromisePageCitizen = null;
+		let varPromisePageCadres = null;
+		let isCadresOrCitizen = true;
+		let onclickCadres = 0;
+		let onclickCitizen = 0;
+		//true la cadres false la citizen
 	</script>
 	<script src="resources/js/my.js"></script>
 </body>

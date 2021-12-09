@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,8 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Entity.Cadres;
-import Entity.CityA1;
+import Entity.Citizen;
+import Entity.CityA2;
 import Model.DAO;
+import Model.ModelCadres;
+import Model.ModelCitizen;
 
 @WebServlet(urlPatterns = {"/home"})
 public class homeController extends HttpServlet{
@@ -25,16 +29,33 @@ public class homeController extends HttpServlet{
 		PrintWriter out = resp.getWriter();
 		HttpSession session = req.getSession();
 		DAO dao = new DAO();
+		int count = 25;
 		
 		if(session.getAttribute("account") != null) {
-			List<CityA1> listCity = dao.getAllCity();
-			List<Cadres> listCadres = dao.getAllCadres();
 			Cadres cadres = (Cadres) session.getAttribute("account");
+			List<Cadres> listCadres = ModelCadres.getAllLowerCadresByCadres(cadres);
+			List<Citizen> listCitizen = (cadres.getRank().equals("A1")) ? 
+					dao.getAllCitizen() : ModelCitizen.filterCitizenByCadres(cadres.getNumberID());;
+			switch (cadres.getRank()) {
+				case "A1":
+					req.setAttribute("listcity", dao.getAllCity());
+					break;
+				case "A2":
+					req.setAttribute("listdistrict", dao.getAllDistrictByType(cadres.getNumberID(), "cityID"));
+					break;
+				case "A3":
+					req.setAttribute("listcommune", dao.getAllCommuneByType(cadres.getNumberID(), "districtID"));
+					break;
+				case "B1":
+					req.setAttribute("listvillage", dao.getAllVillageByType(cadres.getNumberID(), "communeID"));
+					break;	
+			}
 			
-			
+			req.setAttribute("count", count);
 			req.setAttribute("sizecadres", listCadres.size());
-			req.setAttribute("listcadres", listCadres);
-			req.setAttribute("listcity", listCity);
+			req.setAttribute("sizecitizen", listCitizen.size());
+			req.setAttribute("listcadres", ModelCadres.filterCadresByPage(0, count, listCadres));
+			req.setAttribute("listcitizen", ModelCitizen.filterCitizenByPage(0, count, listCitizen));
 			req.getRequestDispatcher("Home.jsp").forward(req, resp);
 		} else {
 			out.println("<script type=\"text/javascript\">");

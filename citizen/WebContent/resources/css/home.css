@@ -423,22 +423,22 @@ HOME
     text-align: center;
     color: var(--color-title);
     margin: 32px 0px;
+    flex-basis: 100%;
 }
-.input_content form {
+.input_content > div {
     display: flex;
     flex-wrap: wrap;
 }
-.input_content form > div {
+.input_content > div > div {
     flex-basis: 100%;
     display: flex;
     margin: 8px 0px;
 }
-.input_content form > div > label {
+.input_content > div > div > label {
     flex-basis: 20%;
     padding: 12px 0px;
 }
-.input_content form > div > input,
-.input_content form textarea {
+.input_content > div > div > input {
     width: 100%;
     height: 40px;
     font-size: 1rem;
@@ -448,8 +448,7 @@ HOME
     border: 1px solid #343a4a;
     border-radius: .2rem;
 }
-.input_content div input:focus,
-.input_content form textarea:focus {
+.input_content div input:focus {
     outline: none;
 }
 .input_content div div {
@@ -462,10 +461,7 @@ HOME
 .input_content div input[type=file] {
     cursor: pointer;
 }
-.input_content form textarea {
-    height: 120px;
-}
-.input_content form button {
+.input_content > div button {
     background-color: #00acc1;
     border-color: #00acc1;
     color: var(--color-title);
@@ -477,19 +473,19 @@ HOME
     margin: 36px 0px 12px 0px;
     border-radius: 2px;
 }
-.input_content form button:focus {
+.input_content > div button:focus {
     outline: none;
     box-shadow: 0 0 0 0.15rem rgb(38 184 202 / 50%);
 }
-.input_content form button:not(:hover) {
+.input_content > div button:not(:hover) {
     box-shadow: none;
 }
-.input_content form button:hover {
+.input_content > div button:hover {
     color: #fff;
     background-color: #008a9b;
     border-color: #007f8e;
 }
-.input_content form .submit {
+.input_content > div .submit {
     display: block;
     width: 100%;
     text-align: center;
@@ -500,11 +496,20 @@ HOME
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.content_top .content_select {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.content_top .content_select .search_select {
+    flex: 1;
+    text-align: right;
+}
 .content_top label {
     font-weight: bold;
     color: #adb5bd;
     margin-right: 12px;
-    padding: 12px 0px;
+    padding: 28px 0px;
 }
 .content_top select {
     border: 2px solid var(--color-border);
@@ -516,22 +521,21 @@ HOME
     outline: none;
 }
 .content_top .search {
-    flex-basis: 75%;
-    display: flex;
-    flex-wrap: nowrap;
+    text-align: right;
 }
 .content_top .search input {
-    flex: 1;
-    height: 40px;
+    height: 32px;
     font-size: 1rem;
     padding: 0.4rem 0.6rem;
     color: #adb5bd;
     background-color: var(--color-border);
     border: 1px solid #343a4a;
     border-radius: .2rem;
+    width: 280px;
 }
-.content_top .search select {
+.content_top .search_select select {
     margin-right: 24px;
+    width: 160px;
 }
 .content_top .search input:focus {
     outline: none;

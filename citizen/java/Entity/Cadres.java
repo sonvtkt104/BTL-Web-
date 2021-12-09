@@ -2,14 +2,23 @@ package Entity;
 
 import Model.ModelCadres;
 
-public class Cadres extends Person {
+public class Cadres {
+	private int ordinal;
 	private String username;
 	private String password;
-	private String email;
-	private String time;
 	private boolean status;
+	private String numberID;
 	private String rank;
+	private String accessTime;
 	
+	public String getAccessTime() {
+		return accessTime;
+	}
+
+	public void setAccessTime(String accessTime) {
+		this.accessTime = accessTime;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -24,22 +33,6 @@ public class Cadres extends Person {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getTime() {
-		return time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
 	}
 
 	public boolean isStatus() {
@@ -57,49 +50,64 @@ public class Cadres extends Person {
 	public void setRank(String rank) {
 		this.rank = rank;
 	}
+	
+	public String getManageArea() {
+		return ModelCadres.convertNumberIDToAddress(this);
+	}
 
-	public Cadres(String ordinal, String name, String username, String password, String email, String numberPhone,
-			String time, boolean status, String rank, String numberID) {
-		super(ordinal, name, numberPhone, numberID);
+	public int getOrdinal() {
+		return ordinal;
+	}
+
+	public void setOrdinal(int ordinal) {
+		this.ordinal = ordinal;
+	}
+
+	public String getNumberID() {
+		return numberID;
+	}
+
+	public void setNumberID(String numberID) {
+		this.numberID = numberID;
+	}
+
+	public Cadres(int ordinal, String username, String password, boolean status, String numberID, String rank,
+			String accessTime) {
+		this.ordinal = ordinal;
 		this.username = username;
 		this.password = password;
-		this.email = email;
-		this.time = time;
 		this.status = status;
+		this.numberID = numberID;
 		this.rank = rank;
+		this.accessTime = accessTime;
 	}
-	
 
 	@Override
 	public int hashCode() {
 //		return (super.getOrdinal() + username + password).hashCode();
-		return ordinal.hashCode();
+		return ordinal;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		return obj instanceof Cadres ? ((Cadres) obj).toJSON().equals(this.toJSON()) : (false);
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Cadres [ordinal=" + super.getOrdinal() + ", name=" + super.getName() + ", username=" + username + ", password=" + password
-				+ ", email=" + email + ", numberPhone=" + super.getNumberPhone()  + ", time=" + time
-				+ ", status=" + status + ", rank=" + rank + ", numberID=" + super.getNumberID() + "]";
+		return "Cadres [ordinal=" + ordinal + ", username=" + username + ", password=" + password + ", status=" + status
+				+ ", numberID=" + numberID + ", rank=" + rank + ", accessTime=" + accessTime + "]";
 	}
-	
+
 	public String toJSON() {
-		return "{\n\t\"ordinal\": " + super.getOrdinal() + ",\n"
-				+ "\t\"name\": \"" + super.getName() + "\",\n"
+		return "{\n\t\"ordinal\": " + ordinal + ",\n"
 				+ "\t\"username\": \"" + username + "\",\n"
 				+ "\t\"password\": \"" + password + "\",\n"
-				+ "\t\"email\": \"" + email + "\",\n"
-				+ "\t\"numberPhone\": \"" + super.getNumberPhone() + "\",\n"
-				+ "\t\"time\": \"" + time + "\",\n"
 				+ "\t\"status\": " + status + ",\n"
 				+ "\t\"rank\": \"" + rank + "\",\n"
-				+ "\t\"manageArea\": \"" + ModelCadres.convertRankToAddress(username) + "\",\n"
-				+ "\t\"numberID\": " + super.getNumberID() + "\n"
+				+ "\t\"numberID\": \"" + numberID + "\",\n"
+				+ "\t\"accesstime\": \"" + accessTime + "\",\n"
+				+ "\t\"managearea\": \"" + this.getManageArea() + "\"\n"
 				+ "}";
 	}
 	

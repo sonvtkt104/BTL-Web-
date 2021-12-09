@@ -1,0 +1,901 @@
+[{
+	"ordinal": 6,
+	"username": "01",
+	"password": "1",
+	"status": true,
+	"rank": "A2",
+	"numberID": "01",
+	"accesstime": "null",
+	"managearea": "Thành phố Hà Nội"
+}, {
+	"ordinal": 69,
+	"username": "0101",
+	"password": "1",
+	"status": true,
+	"rank": "A3",
+	"numberID": "0101",
+	"accesstime": "null",
+	"managearea": "Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 814,
+	"username": "010101",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010101",
+	"accesstime": "null",
+	"managearea": "Phường Phường Thượng Thanh - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11538,
+	"username": "01010101",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010101",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11539,
+	"username": "01010102",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010102",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11540,
+	"username": "01010103",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010103",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11541,
+	"username": "01010104",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010104",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 815,
+	"username": "010102",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010102",
+	"accesstime": "null",
+	"managearea": "Phường Phường Ngọc Thụy - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11542,
+	"username": "01010201",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010201",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11543,
+	"username": "01010202",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010202",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11544,
+	"username": "01010203",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010203",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11545,
+	"username": "01010204",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010204",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 816,
+	"username": "010103",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010103",
+	"accesstime": "null",
+	"managearea": "Phường Phường Giang Biên - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11546,
+	"username": "01010301",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010301",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11547,
+	"username": "01010302",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010302",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11548,
+	"username": "01010303",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010303",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11549,
+	"username": "01010304",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010304",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 817,
+	"username": "010104",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010104",
+	"accesstime": "null",
+	"managearea": "Phường Phường Đức Giang - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11550,
+	"username": "01010401",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010401",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11551,
+	"username": "01010402",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010402",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11552,
+	"username": "01010403",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010403",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11553,
+	"username": "01010404",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010404",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 818,
+	"username": "010105",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010105",
+	"accesstime": "null",
+	"managearea": "Phường Phường Việt Hưng - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11554,
+	"username": "01010501",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010501",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11555,
+	"username": "01010502",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010502",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11556,
+	"username": "01010503",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010503",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11557,
+	"username": "01010504",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010504",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 819,
+	"username": "010106",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010106",
+	"accesstime": "null",
+	"managearea": "Phường Phường Gia Thụy - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11558,
+	"username": "01010601",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010601",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11559,
+	"username": "01010602",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010602",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11560,
+	"username": "01010603",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010603",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11561,
+	"username": "01010604",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010604",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 820,
+	"username": "010107",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010107",
+	"accesstime": "null",
+	"managearea": "Phường Phường Ngọc Lâm - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11562,
+	"username": "01010701",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010701",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11563,
+	"username": "01010702",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010702",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11564,
+	"username": "01010703",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010703",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11565,
+	"username": "01010704",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010704",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 821,
+	"username": "010108",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010108",
+	"accesstime": "null",
+	"managearea": "Phường Phường Phúc Lợi - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11566,
+	"username": "01010801",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010801",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11567,
+	"username": "01010802",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010802",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11568,
+	"username": "01010803",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010803",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11569,
+	"username": "01010804",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010804",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 822,
+	"username": "010109",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010109",
+	"accesstime": "null",
+	"managearea": "Phường Phường Bồ Đề - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11570,
+	"username": "01010901",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010901",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11571,
+	"username": "01010902",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010902",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11572,
+	"username": "01010903",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010903",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11573,
+	"username": "01010904",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01010904",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 823,
+	"username": "010110",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010110",
+	"accesstime": "null",
+	"managearea": "Phường Phường Sài Đồng - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11574,
+	"username": "01011001",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011001",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11575,
+	"username": "01011002",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011002",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11576,
+	"username": "01011003",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011003",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11577,
+	"username": "01011004",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011004",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 824,
+	"username": "010111",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010111",
+	"accesstime": "null",
+	"managearea": "Phường Phường Long Biên - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11578,
+	"username": "01011101",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011101",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11579,
+	"username": "01011102",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011102",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11580,
+	"username": "01011103",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011103",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11581,
+	"username": "01011104",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011104",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 825,
+	"username": "010112",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010112",
+	"accesstime": "null",
+	"managearea": "Phường Phường Thạch Bàn - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11582,
+	"username": "01011201",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011201",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11583,
+	"username": "01011202",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011202",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11584,
+	"username": "01011203",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011203",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11585,
+	"username": "01011204",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011204",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 826,
+	"username": "010113",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010113",
+	"accesstime": "null",
+	"managearea": "Phường Phường Phúc Đồng - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11586,
+	"username": "01011301",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011301",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11587,
+	"username": "01011302",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011302",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11588,
+	"username": "01011303",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011303",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11589,
+	"username": "01011304",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011304",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 827,
+	"username": "010114",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010114",
+	"accesstime": "null",
+	"managearea": "Phường Phường Cự Khối - Quận Long Biên - Thành phố Hà Nội"
+}, {
+	"ordinal": 11590,
+	"username": "01011401",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011401",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11591,
+	"username": "01011402",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011402",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11592,
+	"username": "01011403",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011403",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 11593,
+	"username": "01011404",
+	"password": "1",
+	"status": true,
+	"rank": "B2",
+	"numberID": "01011404",
+	"accesstime": "null",
+	"managearea": ""
+}, {
+	"ordinal": 70,
+	"username": "0102",
+	"password": "1",
+	"status": true,
+	"rank": "A3",
+	"numberID": "0102",
+	"accesstime": "null",
+	"managearea": "Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 926,
+	"username": "010201",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010201",
+	"accesstime": "null",
+	"managearea": "Thị trấn Thị trấn Đông Anh - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 927,
+	"username": "010202",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010202",
+	"accesstime": "null",
+	"managearea": "Xã Xã Xuân Nộn - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 928,
+	"username": "010203",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010203",
+	"accesstime": "null",
+	"managearea": "Xã Xã Thuỵ Lâm - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 929,
+	"username": "010204",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010204",
+	"accesstime": "null",
+	"managearea": "Xã Xã Bắc Hồng - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 930,
+	"username": "010205",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010205",
+	"accesstime": "null",
+	"managearea": "Xã Xã Nguyên Khê - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 931,
+	"username": "010206",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010206",
+	"accesstime": "null",
+	"managearea": "Xã Xã Nam Hồng - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 932,
+	"username": "010207",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010207",
+	"accesstime": "null",
+	"managearea": "Xã Xã Tiên Dương - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 933,
+	"username": "010208",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010208",
+	"accesstime": "null",
+	"managearea": "Xã Xã Vân Hà - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 934,
+	"username": "010209",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010209",
+	"accesstime": "null",
+	"managearea": "Xã Xã Uy Nỗ - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 935,
+	"username": "010210",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010210",
+	"accesstime": "null",
+	"managearea": "Xã Xã Vân Nội - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 936,
+	"username": "010211",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010211",
+	"accesstime": "null",
+	"managearea": "Xã Xã Liên Hà - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 937,
+	"username": "010212",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010212",
+	"accesstime": "null",
+	"managearea": "Xã Xã Việt Hùng - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 938,
+	"username": "010213",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010213",
+	"accesstime": "null",
+	"managearea": "Xã Xã Kim Nỗ - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 939,
+	"username": "010214",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010214",
+	"accesstime": "null",
+	"managearea": "Xã Xã Kim Chung - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 940,
+	"username": "010215",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010215",
+	"accesstime": "null",
+	"managearea": "Xã Xã Dục Tú - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 941,
+	"username": "010216",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010216",
+	"accesstime": "null",
+	"managearea": "Xã Xã Đại Mạch - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 942,
+	"username": "010217",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010217",
+	"accesstime": "null",
+	"managearea": "Xã Xã Vĩnh Ngọc - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 943,
+	"username": "010218",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010218",
+	"accesstime": "null",
+	"managearea": "Xã Xã Cổ Loa - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 944,
+	"username": "010219",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010219",
+	"accesstime": "null",
+	"managearea": "Xã Xã Hải Bối - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 945,
+	"username": "010220",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010220",
+	"accesstime": "null",
+	"managearea": "Xã Xã Xuân Canh - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 946,
+	"username": "010221",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010221",
+	"accesstime": "null",
+	"managearea": "Xã Xã Võng La - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 947,
+	"username": "010222",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010222",
+	"accesstime": "null",
+	"managearea": "Xã Xã Tàm Xá - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 948,
+	"username": "010223",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010223",
+	"accesstime": "null",
+	"managearea": "Xã Xã Mai Lâm - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 949,
+	"username": "010224",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010224",
+	"accesstime": "null",
+	"managearea": "Xã Xã Đông Hội - Huyện Đông Anh - Thành phố Hà Nội"
+}, {
+	"ordinal": 71,
+	"username": "0103",
+	"password": "1",
+	"status": true,
+	"rank": "A3",
+	"numberID": "0103",
+	"accesstime": "null",
+	"managearea": "Huyện Thanh Oai - Thành phố Hà Nội"
+}, {
+	"ordinal": 1225,
+	"username": "010301",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010301",
+	"accesstime": "null",
+	"managearea": "Thị trấn Thị trấn Kim Bài - Huyện Thanh Oai - Thành phố Hà Nội"
+}, {
+	"ordinal": 1226,
+	"username": "010302",
+	"password": "1",
+	"status": true,
+	"rank": "B1",
+	"numberID": "010302",
+	"accesstime": "null",
+	"managearea": "Xã Xã Cự Khê - Huyện Thanh Oai - Thành phố Hà Nội"
+}]
