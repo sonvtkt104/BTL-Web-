@@ -510,39 +510,46 @@ HOME
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.content_top .content_select {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.content_top .content_select .search_select {
+    flex: 1;
+    text-align: right;
+}
 .content_top label {
     font-weight: bold;
     color: #adb5bd;
     margin-right: 12px;
-    padding: 12px 0px;
+    padding: 28px 0px;
 }
 .content_top select {
     border: 2px solid var(--color-border);
     background-color: var(--color-bg);
     color: #adb5bd;
     padding: 4px 36px 4px 4px;
-    height: 40px;
 }
 .content_top select:focus {
     outline: none;
 }
-.view .content_top select option:hover {
-    background-color: yellow;
-}
 .content_top .search {
-    flex-basis: 25%;
-    display: flex;
-    flex-wrap: nowrap;
+    text-align: right;
 }
 .content_top .search input {
-    flex: 1;
-    height: 40px;
+    height: 32px;
     font-size: 1rem;
     padding: 0.4rem 0.6rem;
     color: #adb5bd;
     background-color: var(--color-border);
     border: 1px solid #343a4a;
     border-radius: .2rem;
+    width: 280px;
+}
+.content_top .search_select select {
+    margin-right: 24px;
+    width: 160px;
 }
 .content_top .search input:focus {
     outline: none;
@@ -766,31 +773,40 @@ fix diagram Home
     margin-left: 250px;
     padding: 8px 0px;
 }
-.add_user button{
-    height: 100%;
+.add_user button {
     background-color: var(--color-border);
     border: 1px solid #343a4a;
     color: #adb5bd;
     font-size: 15px;
     width: 160px;
     cursor: pointer;
+    padding: 6px;
 }
 .add_user button i{
     color: var(--color-menu-hover);
     font-size: 14px;
     margin-right: 5px;
 }
-.add_user .add_user_detail{
+.add_user .add_user_model {
+    background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
-    width: 500px;
-    height: 500px;
-    top: 100px;
-    background-color: var(--color-bg-menu);
-    left: 500px;
-    z-index: 2;
-    flex-direction: column;
-    padding: 0px 50px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2002;
     display: none;
+}
+.add_user .add_user_detail{
+    background-color: var(--color-bg-menu);
+    z-index: 2003;
+    flex-direction: column;
+    padding: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
 }
 .add_user_detail h2{
     margin: 30px 0px;
@@ -804,15 +820,20 @@ fix diagram Home
 }
 .add_user_detail div{
     width: 100%;
-    height: 60px;
     display: flex;
+    padding: 8px;
 }
 .add_user_detail div label {
-    flex-basis: 27%;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
 }
 .add_user_detail div input{
+    flex-basis: 70%;
     width: 100%;
-    height: 40px;
+    height: 32px;
     font-size: 1rem;
     padding: 0.4rem 0.6rem;
     color: white;
@@ -821,10 +842,20 @@ fix diagram Home
     border: 1px solid #343a4a;
     border-radius: 0.2rem
 }
-.add_user .add_user_detail >input{
-    width: 120px;
-    text-align: center;
-    margin-top: 10px;
+.add_user .submit {
+    justify-content: center;
+}
+.add_user .submit input{
+    background-color: #00acc1;
+    color: var(--color-title);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    flex-basis: 15%;
 }
 .add_user_detail button{
     position: absolute;
@@ -981,7 +1012,10 @@ div#menu.toggle_menu{
 .grant .right,
 .edit .right {
     margin: 20px 0 20px 100px;
-    width: 100%;
+    flex-basis: 70%;
+}
+.edit .right {
+    margin-left: 20px;
 }
 .detail .right div,
 .grant .right div,
@@ -993,7 +1027,7 @@ div#menu.toggle_menu{
 .detail .right div label,
 .grant .right div label,
 .edit .right div label {
-    flex-basis:15%;
+    flex-basis:25%;
     line-height: 35px;
 }
 .detail .right div input,

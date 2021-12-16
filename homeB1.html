@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Citizen</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
@@ -14,30 +14,21 @@
             <a href="">citizenv</a>
         </div>
         <ul class = "navigation">
-            <li class = "home">
-                <span class = "btn_navi open"><i class="fas fa-home"></i>Trang chủ</span>
+            <li class = "home" onclick="clickTest()">
+                <span class = "btn_navi open" onclick = "clickTabMenu(this, 'home')"><i class="fas fa-home"></i>Trang chủ</span>
             <li class = "input">
-                <span onclick="expandInput()">
-                    <i class="fas fa-edit"></i>Nhập liệu<i class="fas fa-chevron-right expand"></i>
+                <span class = "btn_navi" onclick = "clickTabMenu(this, 'input')">
+                    <i class="fas fa-edit"></i>Nhập liệu
                 </span>
-                <ul class = "drop_input">
-                    <li class = "btn_navi">Nhập trực tiếp</li>
-                    <li class = "btn_navi">Nhập file</li>
-                </ul>
             </li>
             <li class = "view">
-                <span class = "btn_navi">
+                <span class = "btn_navi" onclick = "clickTabMenu(this, 'cadres')">
                     <i class="fas fa-street-view"></i>Cấp quyền truy cập
                 </span>
             </li>
             <li class="info_user">
-                <span class = "btn_navi">
+                <span class = "btn_navi" onclick = "clickTabMenu(this, 'citizen')">
                     <i class="fas fa-users"></i>Thông tin người dân
-                </span>
-            </li>
-            <li class="model">
-                <span class = "btn_navi">
-                    <i class="far fa-user"></i>Thông tin cá nhân
                 </span>
             </li>
         </ul>
@@ -320,10 +311,6 @@
             </div>
         </div>
 
-        <div class = "input_file">
-            <h1>DHSDSKAKJDJSAKDKJSAKJDKJASKJKDJASKJAD</h1>
-        </div>
-
         <div class="view ">
             <div class = "view_header">
                 <p>Danh sách cán bộ B2</p>
@@ -350,7 +337,7 @@
                 <div class = "content_top"> 
                     <div class = "count">
                         <label>Giới hạn số lượng bảng</label>
-                        <select name="content_top_count" id="content_top_count" onblur='this.size=0;' onchange='this.size=1;'>
+                        <select name="content_top_count" id="content_top_count">
                             <option value="10">10</option>
                             <option value="25">25</option>
                             <option value="50">50</option>
@@ -359,25 +346,36 @@
                     </div>
                     <div class="add_user">
                         <button><i class="fas fa-plus"></i>Thêm người dùng</button>
-                        <div class="add_user_detail">
-                            <h2>Thêm tài khoản</h2>
-                            <div>
-                                <label for="">Địa phận:</label>
-                                <input type="text" name="" id="">
+                        <div class="add_user_model">
+                            <div class = "add_user_detail">
+                                <h2>Thêm tài khoản cán bộ</h2>
+                                <div>
+                                    <label for="">Tài khoản:</label>
+                                    <input type="text" name="" id="">
+                                </div>
+                                <div>
+                                    <label for="">Mật khẩu: </label>
+                                    <input type="text">
+                                </div>
+                                <div>
+                                    <label for="">Nhập lại mật khẩu: </label>
+                                    <input type="text">
+                                </div>
+                                <div>
+                                    <label for="">Khu vực quản lí: </label>
+                                    <select name="" id="">
+                                        <option value="">Tất cả</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="">Thời gian cấp quyền: </label>
+                                    <input type="datetime-local" name="" id="">
+                                </div>
+                                <div class = "submit">
+                                    <input type="button" value="Thêm">
+                                </div>
+                                <button><i class="fas fa-times"></i></button>
                             </div>
-                            <div>
-                                <label for="">Mã vùng: </label>
-                                <input type="text">
-                            </div>
-                            <p>Thông tin cá nhân</p>
-                            <div>
-                                <label for="">Tên cán bộ: </label>
-                                <input type="text">
-                            </div>
-                            <div><label for="">Email:</label><input type="text"></div>
-                            <div><label for="">SĐT: </label><input type="text"></div>
-                            <input type="button" value="Thêm">
-                            <button><i class="fas fa-times"></i></button>
                         </div>
                     </div>
                     <div class="search">
@@ -388,55 +386,48 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID
+                            <th>STT
                                 <span>
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
-                            </th>
-                            <th class="col_responsive_mobile">Tên cán bộ
-                                <span>
-                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
-                                </span>
-                            </th>
-                            <th class="col_responsive_ipad">Điện thoại
                             </th>
                             <th>Tài khoản
                                 <span>
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
                             </th>
-                            <th>Mật khẩu
-                            </th>
-                            <th>Địa chỉ</th>
-                            <th class="col_responsive_mobile">Thời gian nhập
+                            <th>Mật khẩu</th>
+                            <th>Cấp bậc
                                 <span>
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
                             </th>
-                            <th>Tùy chọn
+                            <th>Khu vực quản lí</th>
+                            <th>Trạng thái</th>
+                            <th>Thời gian cấp quyền
+                                <span>
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
                             </th>
+                            <th>Tùy chọn</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
+                            <td>1</td>
+                            <td class = "view_username">admin</td>
+                            <td class = "view_password">
+                                <p>1</p>
                             </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
+                            <td>A1</td>
+                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td>Kích hoạt</td>
+                            <td>15/01/2022 23:59:59</td>
                             <td class = "action">
-                                <div class="list_action">
+                                <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
                                         <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
                                         <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
                                         <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
                                     </ul>
@@ -444,24 +435,20 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
+                            <td>1</td>
+                            <td class = "view_username">admin</td>
+                            <td class = "view_password">
+                                <p>1</p>
                             </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
+                            <td>A1</td>
+                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td>Kích hoạt</td>
+                            <td>15/01/2022 23:59:59</td>
                             <td class = "action">
-                                <div class="list_action">
+                                <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
                                         <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
                                         <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
                                         <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
                                     </ul>
@@ -469,24 +456,20 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
+                            <td>1</td>
+                            <td class = "view_username">admin</td>
+                            <td class = "view_password">
+                                <p>1</p>
                             </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
+                            <td>A1</td>
+                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td>Kích hoạt</td>
+                            <td>15/01/2022 23:59:59</td>
                             <td class = "action">
-                                <div class="list_action">
+                                <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
                                         <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
                                         <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
                                         <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
                                     </ul>
@@ -494,24 +477,20 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
+                            <td>1</td>
+                            <td class = "view_username">admin</td>
+                            <td class = "view_password">
+                                <p>1</p>
                             </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
+                            <td>A1</td>
+                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td>Kích hoạt</td>
+                            <td>15/01/2022 23:59:59</td>
                             <td class = "action">
-                                <div class="list_action">
+                                <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
                                         <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
                                         <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
                                         <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
                                     </ul>
@@ -519,24 +498,20 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
+                            <td>1</td>
+                            <td class = "view_username">admin</td>
+                            <td class = "view_password">
+                                <p>1</p>
                             </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
+                            <td>A1</td>
+                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td>Kích hoạt</td>
+                            <td>15/01/2022 23:59:59</td>
                             <td class = "action">
-                                <div class="list_action">
+                                <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
                                         <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
                                         <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
                                         <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
                                     </ul>
@@ -544,24 +519,20 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
+                            <td>1</td>
+                            <td class = "view_username">admin</td>
+                            <td class = "view_password">
+                                <p>1</p>
                             </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
+                            <td>A1</td>
+                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td>Kích hoạt</td>
+                            <td>15/01/2022 23:59:59</td>
                             <td class = "action">
-                                <div class="list_action">
+                                <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
                                         <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
                                         <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
                                         <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
                                     </ul>
@@ -569,74 +540,20 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
+                            <td>1</td>
+                            <td class = "view_username">admin</td>
+                            <td class = "view_password">
+                                <p>1</p>
                             </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
+                            <td>A1</td>
+                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td>Kích hoạt</td>
+                            <td>15/01/2022 23:59:59</td>
                             <td class = "action">
-                                <div class="list_action">
+                                <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
                                         <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
-                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
-                            </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                            <td class = "action">
-                                <div class="list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
-                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#1</td>
-                            <td class="col_responsive_mobile">
-                                <span>
-                                    <p>Đàm Tam Khoa</p>
-                                    <p>khoadamtam@gmail.com</p>
-                                </span>
-                            </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td>khoadamtam2001</td>
-                            <td>123456</td>
-                            <td>Hà Nội</td>
-                            <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                            <td class = "action">
-                                <div class="list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="edit_user"><i class="far fa-edit"></i>Sửa đổi</li>
                                         <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
                                         <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
                                     </ul>
@@ -685,164 +602,78 @@
             </div>
             <div class="info_list">
                 <div class = "content_top">
-                    <div class = "count">
-                        <label>Giới hạn số lượng bảng</label>
-                        <select name="content_top_count" id="content_top_count" onblur='this.size=0;' onchange='this.size=1;'>
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                        </select>
+                    <div class = "content_select" style="flex-basis: 100%;">
+                        <div class = "count">
+                            <label>Số lượng</label>
+                            <select class="content_top_count">
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select>
+                        </div>
+                        <div class="search_select">
+                        	<label>Tỉnh/Thành phố</label>
+		                        <select class="search_city">
+		                        	<option value="0">Tất cả</option>
+		                        </select>
+		                   <label>Quận/Huyện</label>
+		                        <select class="search_district">
+		                            <option value="0">Tất cả</option>
+		                        </select>
+                            <label>Xã/Phường</label>
+		                        <select class="search_commune">
+		                            <option value="0">Tất cả</option>
+		                        </select>
+		                    <label>Đường/Thôn</label>
+                            <select class="search_village">
+                                <option value="0">Tất cả</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="search">
-                        <label for="@">Tìm kiếm</label>
+                    <div class="search" style="flex-basis: 100%; margin-top: 24px;">
+                        <label>Tìm kiếm</label>
                         <input type="text" name="view_search" id="view_search">
                     </div>
                 </div>
                 <table>
                     <thead>
                         <tr>
-                            <th>ID
-                                <span>
+                            <th>ID</th>
+                            <th>Họ và tên
+                                <span class = "sort_name" onclick="sortCitizen(this, 'name')">
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
                             </th>
-                            <th>Thông tin
-                                <span>
-                                    <i class="fas fa-long-arrow-alt-up open"></i><i class="fas fa-long-arrow-alt-down open"></i>
-                                </span>
-                            </th>
-                            <th class="col_responsive_ipad">Điện thoại</th>
-                            <th class="col_responsive_mobile">CMND</th>
-                            <th>Địa chỉ</th>
-                            <th class="col_responsive_ipad">Thời gian nhập
-                                <span>
+                            <th>Ngày sinh
+                                <span class = "sort_dob" onclick="sortCitizen(this, 'dob')">
                                     <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
                                 </span>
                             </th>
+                            <th>CMND
+                                <span class = "sort_id" onclick="sortCitizen(this, 'id')">
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
+                            <th>Địa chỉ thường trú</th>
+                            <th>Tôn giáo</th>
+                            <th>Trình độ văn hóa</th>
+                            <th>Nghề nghiệp</th>
                             <th>Tùy chọn</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>#1</td>
-                            <td class = "info">
-                                <img src="img/avatar.jpg" alt="">
-                                <span>
-                                    <p>Mark Zugkerburg</p>
-                                    <p>markzugkerburg@gmail.com</p>
-                                </span>
-                            </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td class="col_responsive_mobile">01234567891011</td>
+                            <td>1</td>
+                            <td class = "info">Đàm Tam Khoa</td>
+                            <td>11/11/2001</td>
+                            <td>00120103363</td>
                             <td class = "info_list_address">
-                                <p>Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội</p>
+                                <p>Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội</p>
                             </td>
-                            <td class="col_responsive_ipad">22/11/2021 05:35:00</td>
-                            <td class = "action">
-                                <div class="list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="edit_person"><i class="far fa-edit"></i>Sửa đổi</li>
-                                        <li class="delete_person"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_person"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#1</td>
-                            <td class = "info">
-                                <img src="img/avatar.jpg" alt="">
-                                <span>
-                                    <p>Mark Zugkerburg</p>
-                                    <p>markzugkerburg@gmail.com</p>
-                                </span>
-                            </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td class="col_responsive_mobile">01234567891011</td>
-                            <td class = "info_list_address">
-                                <p>Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội</p>
-                            </td>
-                            <td class="col_responsive_ipad">22/11/2021 05:35:00</td>
-                            <td class = "action">
-                                <div class="list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="edit_person"><i class="far fa-edit"></i>Sửa đổi</li>
-                                        <li class="delete_person"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_person"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#1</td>
-                            <td class = "info">
-                                <img src="img/avatar.jpg" alt="">
-                                <span>
-                                    <p>Mark Zugkerburg</p>
-                                    <p>markzugkerburg@gmail.com</p>
-                                </span>
-                            </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td class="col_responsive_mobile">01234567891011</td>
-                            <td class = "info_list_address">
-                                <p>Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội</p>
-                            </td>
-                            <td class="col_responsive_ipad">22/11/2021 05:35:00</td>
-                            <td class = "action">
-                                <div class="list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="edit_person"><i class="far fa-edit"></i>Sửa đổi</li>
-                                        <li class="delete_person"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_person"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#1</td>
-                            <td class = "info">
-                                <img src="img/avatar.jpg" alt="">
-                                <span>
-                                    <p>Mark Zugkerburg</p>
-                                    <p>markzugkerburg@gmail.com</p>
-                                </span>
-                            </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td class="col_responsive_mobile">01234567891011</td>
-                            <td class = "info_list_address">
-                                <p>Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội</p>
-                            </td>
-                            <td class="col_responsive_ipad">22/11/2021 05:35:00</td>
-                            <td class = "action">
-                                <div class="list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="edit_person"><i class="far fa-edit"></i>Sửa đổi</li>
-                                        <li class="delete_person"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_person"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#1</td>
-                            <td class = "info">
-                                <img src="img/avatar.jpg" alt="">
-                                <span>
-                                    <p>Mark Zugkerburg</p>
-                                    <p>markzugkerburg@gmail.com</p>
-                                </span>
-                            </td>
-                            <td class="col_responsive_ipad">0123456789</td>
-                            <td class="col_responsive_mobile">01234567891011</td>
-                            <td class = "info_list_address">
-                                <p>Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội</p>
-                            </td>
-                            <td class="col_responsive_ipad">22/11/2021 05:35:00</td>
+                            <td>Không</td>
+                            <td>12/12</td>
+                            <td>Sinh viên</td>
                             <td class = "action">
                                 <div class="list_action">
                                     <i class="fas fa-ellipsis-h"></i>
@@ -936,6 +767,6 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/my.js"></script>
+    <script src="my.js"></script>
 </body>
 </html>

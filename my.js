@@ -1,29 +1,31 @@
-const btnExpandInput = document.querySelector("#menu .drop_input");
 const btnDropAccount = document.querySelector("#container .account");
-const elementExpand = document.querySelector("#menu i.expand");
 const elementDropAccount = document.querySelector("#container .drop_account");
 
-const btnNavigations = document.querySelectorAll("#menu .btn_navi");
-const elementContent = document.querySelectorAll("#container > div");
 
-for (const b of btnNavigations) {
-    b.onclick = function () {
-        for (i = 0; i < btnNavigations.length; i++) {
-            if (b === btnNavigations[i]) {
-                btnNavigations[i].classList.add("open");
-                elementContent[i + 1].classList.add("open");
-                document.getElementById("menu").classList.remove("toggle_menu"); //responsive menu
-                if (i == 0 || i == 3 || i == 4) {
-                    btnExpandInput.classList.remove("open");
-                    elementExpand.classList.remove("rotate");
-                    document.querySelector("#menu .input > span").classList.remove("open");
-                }
-            } else {
-                btnNavigations[i].classList.remove("open");
-                elementContent[i + 1].classList.remove("open");
-            }
-        }
-    }
+// Xử lí sự kiện của menu bên trái
+function clickTabMenu(element, type) {
+	const btnNavigations = document.querySelector("#menu .btn_navi.open");
+	const elementContentOpen = document.querySelector("#container > div.open");
+	const elementContent = document.querySelectorAll("#container > div");
+	btnNavigations.classList.remove("open");
+	let i = 0;
+	switch(type) {
+		case 'home':
+			i = 1;
+			break;
+		case 'input':
+			i = 2;
+			break;
+		case 'cadres':
+            i = 3;
+			break;
+		case 'citizen':
+            i = 4;
+			break;
+	}
+	element.classList.add("open");
+	elementContentOpen.classList.remove("open");
+	elementContent[i].classList.add("open");
 }
 
 function expandInput() {
@@ -159,12 +161,11 @@ $(".view_content .detail_user").click(function () {
         html += '<h4>Hà Nội</h4>';
         html += '<p>Mã vùng: <span class="code">01</span></p>'
         html += '<p>Trạng thái: <span class="static">Kich hoat</span></p>';
-        html += '<div class="bottom">';
-        html += '<h5>Người dùng</h5><p>Tên cán bộ: <span >Đàm Tam Khoa</span></p>';
-        html += '<p>SDT: <span>0123456789</span></p><p>Email: <span>khoadamtam@gmail.com</span></p></div></div>';
+        html += '<p>Chức vụ: <span class="rank">A1</span></p>';
+        html += '<p>Thời gian cấp quyền: <span class="accesstime">12/12/2021</span></p></div>';
         html += '<div class="right"><h4>Tài khoản</h4>';
-        html += '<div><label for="">User: </label> <input type="text" value="khoadamtam2001"></div>';
-        html += '<div><label>Password: </label> <input type="text" value="123456"></div>';
+        html += '<div><label for="">Tên tài khoản: </label> <input type="text" value="khoadamtam2001"></div>';
+        html += '<div><label>Mật khẩu: </label> <input type="text" value="123456"></div>';
         html += '<div><label>Ngày khởi tạo: </label> <input type="date" value="2021-11-11"></div></div></div>';
         html += '<label class="exit"><i class="fas fa-times"></i></label></td></tr>';
         $(this).parent().parent().parent().parent().after(html);
@@ -190,13 +191,11 @@ $(".view_content .grant_user").click(function () {
         html += '<h4>Hà Nội</h4>';
         html += '<p>Mã vùng: <span class="code">01</span></p>'
         html += '<p>Trạng thái: <span class="static">Kich hoat</span></p>';
-        html += '<div class="bottom">';
-        html += '<h5>Người dùng</h5><p>Tên cán bộ: <span >Đàm Tam Khoa</span></p>';
-        html += '<p>SDT: <span>0123456789</span></p><p>Email: <span>khoadamtam@gmail.com</span></p></div></div>';
+        html += '<p>Chức vụ: <span class="rank">A1</span></p>';
+        html += '<p>Thời gian cấp quyền: <span class="accesstime">12/12/2021</span></p></div>';
         html += '<div class="right">';
-        html += '<div><label>Ngày bắt đầu: </label> <input type="datetime-local"></div>';
-        html += '<div><label for="">Đến</label></div>';
-        html += '<div><label>Ngày kết thúc: </label> <input type="datetime-local"></div>';
+        html += '<div><label>Hạn cấp quyền: </label> <input type="datetime-local"></div>';
+        html += '<div><label>Mật khẩu: </label> <input type="password"></div>';
         html += '<div class="submit_grant"><label for=""><input type="button" value="Đồng ý"></label></div></div></div>';
         html += '<label class="exit"><i class="fas fa-times"></i></label></td></tr>';
         $(this).parent().parent().parent().parent().after(html);
@@ -204,43 +203,43 @@ $(".view_content .grant_user").click(function () {
 })
 
 // Edit tài khoản
-$(".view_content .edit_user").click(function () {
-    /**
-     * Fetch lấy thông tin xong đổ vào mã bên dưới
-     */
-    if ($(this).parent().parent().parent().parent().next().prop("class") == "edit") {
-        $(".edit").remove();
-    } else {
-        $(".edit").remove();
-        $(".grant").remove();
-        $(".detail").remove();
-        let html = '<tr class="edit">';
-        html += '<td colspan="8">';
-        html += '<h3>Sửa tài khoản</h3>';
-        html += '<div class="edit_info">';
-        html += '<div class="left">';
-        html += '<h4>Hà Nội</h4>';
-        html += '<p>Mã vùng: <span class="code">01</span></p>'
-        html += '<p>Trạng thái: <span class="static">Kich hoat</span></p>';
-        html += '<div class="bottom">';
-        html += '<h5>Người dùng</h5><p>Tên cán bộ: <span >Đàm Tam Khoa</span></p>';
-        html += '<p>SDT: <span>0123456789</span></p><p>Email: <span>khoadamtam@gmail.com</span></p></div></div>';
-        html += '<div class="right"><h4>Tài khoản</h4>';
-        html += '<div><label for="">User: </label> <input type="text" value="khoadamtam2001"></div>';
-        html += '<div><label>Password: </label> <input type="text" value="123456"></div>';
-        html += '<div class="submit_edit"><label for=""><input type="button" value="Đồng ý"></label></div></div></div>';
-        html += '<label class="exit"><i class="fas fa-times"></i></label></td></tr>';
-        $(this).parent().parent().parent().parent().after(html);
-    }
-})
+// $(".view_content .edit_user").click(function () {
+//     /**
+//      * Fetch lấy thông tin xong đổ vào mã bên dưới
+//      */
+//     console.log($(this).parent().parent().parent().parent().children(".view_username").html());
+//     if ($(this).parent().parent().parent().parent().next().prop("class") == "edit") {
+//         $(".edit").remove();
+//     } else {
+//         $(".edit").remove();
+//         $(".grant").remove();
+//         $(".detail").remove();
+//         let html = '<tr class="edit">';
+//         html += '<td colspan="8">';
+//         html += '<h3>Sửa tài khoản</h3>';
+//         html += '<div class="edit_info">';
+//         html += '<div class="left">';
+//         html += '<h4>Hà Nội</h4>';
+//         html += '<p>Mã vùng: <span class="code">01</span></p>'
+//         html += '<p>Trạng thái: <span class="static">Kich hoat</span></p>';
+//         html += '<p>Chức vụ: <span class="rank">A1</span></p>';
+//         html += '<p>Thời gian cấp quyền: <span class="accesstime">12/12/2021</span></p></div>';
+//         html += '<div class="right"><h4>Tài khoản</h4>';
+//         html += '<div><label>Mật khẩu cũ: </label> <input type="text" value=""></div>';
+//         html += '<div><label>Mật khẩu mới: </label> <input type="text"></div>';
+//         html += '<div><label>Nhập lại mật khẩu mới: </label> <input type="text"></div>';
+//         html += '<div class="submit_edit"><label for=""><input type="button" value="Đồng ý"></label></div></div></div>';
+//         html += '<label class="exit"><i class="fas fa-times"></i></label></td></tr>';
+//         $(this).parent().parent().parent().parent().after(html);
+//     }
+// })
 
 //CountDown
 const second = 1000,
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24,
-    endCountDown = "06/01/2022 12:00:00";
-
+    endCountDown = "12/17/2021 12:00:00";
 const countDown = new Date(endCountDown).getTime();
 var start = setInterval(function () {
     const now = new Date().getTime(),
@@ -251,19 +250,19 @@ var start = setInterval(function () {
         clearInterval(start);
     } else {
         document.getElementById("days").innerText = Math.floor(distance / (day)),
-            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
     }
 }, 0);
 
 
 // Cấp tài khoản user
 document.querySelector(".add_user > button").onclick = function () {
-    document.querySelector(".add_user_detail").style.display = 'flex';
+    document.querySelector(".add_user_model").style.display = 'flex';
 }
 document.querySelector(".add_user_detail > button").onclick = function () {
-    document.querySelector(".add_user_detail").style.display = 'none';
+    document.querySelector(".add_user_model").style.display = 'none';
 }
 
 // Add tài khoản mới
