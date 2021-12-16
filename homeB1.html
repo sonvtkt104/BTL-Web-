@@ -81,151 +81,41 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Thông tin</th>
-                                <th class="col_responsive_mobile">Điện thoại</th>
-                                <th>Địa chỉ</th>
-                                <th class="col_responsive_mobile">Thời gian nhập</th>
-                                <th>Tùy chọn</th>
+                                <th>Họ và tên
+                                    <span class = "sort_name" onclick="sortCitizen(this, 'name')">
+                                        <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                    </span>
+                                </th>
+                                <th>Ngày sinh
+                                    <span class = "sort_dob" onclick="sortCitizen(this, 'dob')">
+                                        <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                    </span>
+                                </th>
+                                <th>CMND
+                                    <span class = "sort_id" onclick="sortCitizen(this, 'id')">
+                                        <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                    </span>
+                                </th>
+                                <th>Địa chỉ thường trú</th>
+                                <th>Tôn giáo</th>
+                                <th>Trình độ văn hóa</th>
+                                <th>Nghề nghiệp</th>
+                                <th>Thời gian nhập</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
+                                <td>1</td>
+                                <td class = "info">Đàm Tam Khoa</td>
+                                <td>11/11/2001</td>
+                                <td>00120103363</td>
+                                <td class = "info_list_address">
+                                    <span>Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội</span>
                                 </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr><tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr><tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>#1</td>
-                                <td class = "info">
-                                    <img src="img/avatar.jpg" alt="">
-                                    <span>
-                                        <p>Mark Zugkerburg</p>
-                                        <p>markzugkerburg@gmail.com</p>
-                                    </span>
-                                </td>
-                                <td class="col_responsive_mobile">0123456789</td>
-                                <td>Hà Nội</td>
-                                <td class="col_responsive_mobile">20/11/2021 10:09:00</td>
-                                <td>---</td>
+                                <td>Không</td>
+                                <td>12/12</td>
+                                <td>Sinh viên</td>
+                                <td>11/11/2001 12:00:00</td>
                             </tr>
                         </tbody>
                     </table>
