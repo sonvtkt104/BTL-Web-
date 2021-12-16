@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/bg1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    color: #fff;
+    position: relative;
+    bottom: 115px;
+    right: 100px;
+}
+
+.logo h1 {
+    font-size: 50px;
+}
+
+.logo p {
+    font-size: 20px;
+    padding-top: 12px;
+}
+
+form {
+    width: 350px;
+    height: 400px;
+    background: #fff;
+    background: transparent;
+    color: #fff;
+    position: relative;
+    left: 300px;
+}
+
+form h1 {
+    position: relative;
+    margin: 40px 0 30px;
+    padding-bottom: 12px;
+    width: fit-content;
+    font-size: 30px;
+}
+
+form h1::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: #3498db;
+    bottom: 0;
+}
+
+form button {
+    width: 100%;
+    height: 35px;
+    border: 2px solid #3498db;
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+}
+
+.form-login {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-login input {
+    width: 100%;
+    height: 45px;
+    padding-left: 30px;
+    border: none;
+    border-bottom: 2px solid #3498db;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    color: #fff;
+}
+
+.form-login input::placeholder {
+    color: #fff;
+}
+
+.form-login i {
+    position: absolute;
+    font-size: 20px;
+    line-height: 45px;
+}
