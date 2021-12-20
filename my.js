@@ -26,6 +26,7 @@ function clickTabMenu(element, type) {
 	element.classList.add("open");
 	elementContentOpen.classList.remove("open");
 	elementContent[i].classList.add("open");
+    document.querySelector("#menu").classList.toggle("toggle_menu"); // khi responsive: Ấn vào menu sẽ tự close
 }
 
 function expandInput() {
@@ -239,20 +240,21 @@ const second = 1000,
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24,
-    endCountDown = "12/17/2021 12:00:00";
+    endCountDown = "12/22/2021 12:00:00";
 const countDown = new Date(endCountDown).getTime();
 var start = setInterval(function () {
     const now = new Date().getTime(),
         distance = countDown - now;
 
     if (distance < 0) {
-        document.getElementById("headline").innerText = "Hết thời gian điều tra";
+        document.getElementById("headline").innerHTML = "Hết thời gian điều tra";
+        document.getElementById("countdown").style.display = 'none';
         clearInterval(start);
     } else {
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        document.getElementById("days").innerHTML = Math.floor(distance / (day));
+        document.getElementById("hours").innerHTML = Math.floor((distance % (day)) / (hour));
+        document.getElementById("minutes").innerHTML = Math.floor((distance % (hour)) / (minute));
+        document.getElementById("seconds").innerHTML = Math.floor((distance % (minute)) / second);
     }
 }, 0);
 
@@ -295,7 +297,7 @@ $(".info_list .edit_person").click(function () {
     } else {
         $(".edit").remove();
         $(".detail").remove();
-        let html = '<tr class="edit"><td colspan="7"><h3>Sửa thông tin người dân</h3>';
+        let html = '<tr class="edit"><td colspan="9"><h3>Sửa thông tin người dân</h3>';
             html += '<div class="edit_info"><div class="left"><img src="./img/anhthe.jpeg" alt="">';   
             html += '<p>Mã đơn vị quản lý: <span class="code">0101</span></p>';
             html += '<p>Đơn vị quản lý: <span class="static">Xã Khai Thái</span></p>';
@@ -330,7 +332,7 @@ $(".info_list .detail_person").click(function () {
     } else {
         $(".edit").remove();
         $(".detail").remove();
-        let html = '<tr class="detail"><td colspan="7"><h3>Thông tin chi tiết</h3>';
+        let html = '<tr class="detail"><td colspan="9"><h3>Thông tin chi tiết</h3>';
             html += '<div class="detail_info"><div class="left"><img src="./img/anhthe.jpeg" alt="">';   
             html += '<p>Mã đơn vị quản lý: <span class="code">0101</span></p>';
             html += '<p>Đơn vị quản lý: <span class="static">Xã Khai Thái</span></p>';

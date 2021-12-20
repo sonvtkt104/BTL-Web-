@@ -14,7 +14,7 @@
             <a href="">citizenv</a>
         </div>
         <ul class = "navigation">
-            <li class = "home" onclick="clickTest()">
+            <li class = "home"">
                 <span class = "btn_navi open" onclick = "clickTabMenu(this, 'home')"><i class="fas fa-home"></i>Trang chủ</span>
             <li class = "input">
                 <span class = "btn_navi" onclick = "clickTabMenu(this, 'input')">
@@ -77,7 +77,7 @@
             <div class = "home_recent">
                 <p>Số liệu nhập gần đây</p>
                 <div>
-                    <table>
+                    <table class="tbl_responsive">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -105,17 +105,30 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td class = "info">Đàm Tam Khoa</td>
-                                <td>11/11/2001</td>
-                                <td>00120103363</td>
-                                <td class = "info_list_address">
+                                <td data-title="ID">1</td>
+                                <td class = "info" data-title="Họ và tên">Đàm Tam Khoa</td>
+                                <td data-title="Ngày sinh">11/11/2001</td>
+                                <td data-title="CMND">00120103363</td>
+                                <td class = "info_list_address" data-title="Địa chỉ thường cú">
                                     <span>Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội</span>
                                 </td>
-                                <td>Không</td>
-                                <td>12/12</td>
-                                <td>Sinh viên</td>
-                                <td>11/11/2001 12:00:00</td>
+                                <td data-title="Tôn giáo">Không</td>
+                                <td data-title="Trình độ văn hóa">12/12</td>
+                                <td data-title="Nghề nghiệp">Sinh viên</td>
+                                <td data-title="Thời gian nhập">11/11/2001 12:00:00</td>
+                            </tr>
+                            <tr>
+                                <td data-title="ID">1</td>
+                                <td class = "info" data-title="Họ và tên">Đàm Tam Khoa</td>
+                                <td data-title="Ngày sinh">11/11/2001</td>
+                                <td data-title="CMND">00120103363</td>
+                                <td class = "info_list_address" data-title="Địa chỉ thường cú">
+                                    <span>Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội</span>
+                                </td>
+                                <td data-title="Tôn giáo">Không</td>
+                                <td data-title="Trình độ văn hóa">12/12</td>
+                                <td data-title="Nghề nghiệp">Sinh viên</td>
+                                <td data-title="Thời gian nhập">11/11/2001 12:00:00</td>
                             </tr>
                         </tbody>
                     </table>
@@ -209,7 +222,7 @@
             <div class="view_content">
                 <div class="grant_time">
                     <div class="left">
-                        <div><h3>Thời gian điều tra</h3></div>
+                        <div><h3 id="headline">Thời gian điều tra</h3></div>
                         <div>
                             <p>START: <span>01/11/2021 12:00:00</span></p>
                             <p>END: <span>01/06/2021 12:00:00</span></p>
@@ -273,7 +286,7 @@
                         <input type="text" name="view_search" id="view_search">
                     </div>
                 </div>
-                <table>
+                <table class="tbl_responsive">
                     <thead>
                         <tr>
                             <th>STT
@@ -304,16 +317,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td class = "view_username">admin</td>
-                            <td class = "view_password">
+                            <td data-title="STT">1</td>
+                            <td class = "view_username" data-title="Tai khoan">admin</td>
+                            <td class = "view_password" data-title="Mat khau">
                                 <p>1</p>
                             </td>
-                            <td>A1</td>
-                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
-                            <td>Kích hoạt</td>
-                            <td>15/01/2022 23:59:59</td>
-                            <td class = "action">
+                            <td data-title="Cap bac">A1</td>
+                            <td data-title="Khu vuc quan ly">Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td data-title="Trang thai">Kích hoạt</td>
+                            <td data-title="Thoi gian cap quyen">15/01/2022 23:59:59</td>
+                            <td class = "action" data-title="Tuy chon">
                                 <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
@@ -325,16 +338,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class = "view_username">admin</td>
-                            <td class = "view_password">
+                            <td data-title="STT">1</td>
+                            <td class = "view_username" data-title="Tai khoan">admin</td>
+                            <td class = "view_password" data-title="Mat khau">
                                 <p>1</p>
                             </td>
-                            <td>A1</td>
-                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
-                            <td>Kích hoạt</td>
-                            <td>15/01/2022 23:59:59</td>
-                            <td class = "action">
+                            <td data-title="Cap bac">A1</td>
+                            <td data-title="Khu vuc quan ly">Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td data-title="Trang thai">Kích hoạt</td>
+                            <td data-title="Thoi gian cap quyen">15/01/2022 23:59:59</td>
+                            <td class = "action" data-title="Tuy chon">
                                 <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
@@ -346,100 +359,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class = "view_username">admin</td>
-                            <td class = "view_password">
+                            <td data-title="STT">1</td>
+                            <td class = "view_username" data-title="Tai khoan">admin</td>
+                            <td class = "view_password" data-title="Mat khau">
                                 <p>1</p>
                             </td>
-                            <td>A1</td>
-                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
-                            <td>Kích hoạt</td>
-                            <td>15/01/2022 23:59:59</td>
-                            <td class = "action">
-                                <div class = "list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class = "view_username">admin</td>
-                            <td class = "view_password">
-                                <p>1</p>
-                            </td>
-                            <td>A1</td>
-                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
-                            <td>Kích hoạt</td>
-                            <td>15/01/2022 23:59:59</td>
-                            <td class = "action">
-                                <div class = "list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class = "view_username">admin</td>
-                            <td class = "view_password">
-                                <p>1</p>
-                            </td>
-                            <td>A1</td>
-                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
-                            <td>Kích hoạt</td>
-                            <td>15/01/2022 23:59:59</td>
-                            <td class = "action">
-                                <div class = "list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class = "view_username">admin</td>
-                            <td class = "view_password">
-                                <p>1</p>
-                            </td>
-                            <td>A1</td>
-                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
-                            <td>Kích hoạt</td>
-                            <td>15/01/2022 23:59:59</td>
-                            <td class = "action">
-                                <div class = "list_action">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul class = "">
-                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
-                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
-                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class = "view_username">admin</td>
-                            <td class = "view_password">
-                                <p>1</p>
-                            </td>
-                            <td>A1</td>
-                            <td>Huyện Phú Xuyên - Thành phố Hà Nội</td>
-                            <td>Kích hoạt</td>
-                            <td>15/01/2022 23:59:59</td>
-                            <td class = "action">
+                            <td data-title="Cap bac">A1</td>
+                            <td data-title="Khu vuc quan ly">Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td data-title="Trang thai">Kích hoạt</td>
+                            <td data-title="Thoi gian cap quyen">15/01/2022 23:59:59</td>
+                            <td class = "action" data-title="Tuy chon">
                                 <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
@@ -521,12 +450,12 @@
                             </select>
                         </div>
                     </div>
-                    <div class="search" style="flex-basis: 100%; margin-top: 24px;">
+                    <div class="search" style="flex-basis: 100%;">
                         <label>Tìm kiếm</label>
                         <input type="text" name="view_search" id="view_search">
                     </div>
                 </div>
-                <table>
+                <table class="tbl_responsive">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -554,17 +483,39 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td class = "info">Đàm Tam Khoa</td>
-                            <td>11/11/2001</td>
-                            <td>00120103363</td>
-                            <td class = "info_list_address">
-                                <p>Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội</p>
+                            <td data-title="ID">1</td>
+                            <td class = "info" data-title="Ho va ten">Đàm Tam Khoa</td>
+                            <td data-title="Ngay sinh">11/11/2001</td>
+                            <td data-title="CMND">00120103363</td>
+                            <td class = "info_list_address" data-title="Dia chi thuong chu">
+                                Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội
                             </td>
-                            <td>Không</td>
-                            <td>12/12</td>
-                            <td>Sinh viên</td>
-                            <td class = "action">
+                            <td data-title="Ton giao">Không</td>
+                            <td data-title="Trinh do van hoa">12/12</td>
+                            <td data-title="Nghe nghiep">Sinh viên</td>
+                            <td class = "action" data-title="Tuy chon">
+                                <div class="list_action">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    <ul class = "">
+                                        <li class="edit_person"><i class="far fa-edit"></i>Sửa đổi</li>
+                                        <li class="delete_person"><i class="far fa-trash-alt"></i>Xóa</li>
+                                        <li class="detail_person"><i class="fas fa-user-tag"></i>Thông tin</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-title="ID">1</td>
+                            <td class = "info" data-title="Ho va ten">Đàm Tam Khoa</td>
+                            <td data-title="Ngay sinh">11/11/2001</td>
+                            <td data-title="CMND">00120103363</td>
+                            <td class = "info_list_address" data-title="Dia chi thuong chu">
+                                Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội
+                            </td>
+                            <td data-title="Ton giao">Không</td>
+                            <td data-title="Trinh do van hoa">12/12</td>
+                            <td data-title="Nghe nghiep">Sinh viên</td>
+                            <td class = "action" data-title="Tuy chon">
                                 <div class="list_action">
                                     <i class="fas fa-ellipsis-h"></i>
                                     <ul class = "">
