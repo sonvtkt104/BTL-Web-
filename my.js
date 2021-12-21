@@ -354,3 +354,51 @@ $(".info_list .detail_person").click(function () {
         $(this).parent().parent().parent().parent().after(html);
     }
 })
+
+
+
+//xử lí drop select tìm kiếm người dân
+let isDisplaySelect = [
+    true, true, true, true
+];
+//true la chua drop
+function dropSelectSearchCitizen(type) {
+    const elementSearchSelect = document.querySelectorAll(".person_info .select ul");
+    switch(type) {
+		case 'city':
+			i = 0;
+			break;
+		case 'district':
+			i = 1;
+			break;
+		case 'commune':
+            i = 2;
+			break;
+		case 'village':
+            i = 3;
+			break;
+	}
+    let index = 0;
+	do {
+		if(index === i) {
+			if(elementSearchSelect[i].className.indexOf('open') === -1) {
+				elementSearchSelect[i].classList.add("open");
+			} else {
+				elementSearchSelect[i].classList.remove("open");
+			}
+		} else {
+			elementSearchSelect[index].classList.remove("open");
+		}
+		++index;
+	} while (index < 4);
+}
+document.querySelector(".person_info ul button").onclick = function(e) {
+    let array = [];
+    const elementInput = document.querySelectorAll(".person_info .select ul input");
+    for(let element of elementInput) {
+        if(element.checked) {
+            array[array.length++] = element.value;
+        }
+    }
+    document.querySelector(".person_info .select ul input").style.display = 'none';
+}
