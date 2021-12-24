@@ -159,7 +159,7 @@ $(".view_content .detail_user").click(function () {
         html += '<h3>Thông tin chi tiết</h3>';
         html += '<div class="detail_info">';
         html += '<div class="left">';
-        html += '<h4>Hà Nội</h4>';
+        html += '<p>Khu vực: <span class="area">Hà Nội</span></p>';
         html += '<p>Mã vùng: <span class="code">01</span></p>'
         html += '<p>Trạng thái: <span class="static">Kich hoat</span></p>';
         html += '<p>Chức vụ: <span class="rank">A1</span></p>';
@@ -189,7 +189,7 @@ $(".view_content .grant_user").click(function () {
         html += '<h3>Cấp quyền</h3>';
         html += '<div class="grant_info">';
         html += '<div class="left">';
-        html += '<h4>Hà Nội</h4>';
+        html += '<p>Khu vực: <span class="area">Hà Nội</span></p>';
         html += '<p>Mã vùng: <span class="code">01</span></p>'
         html += '<p>Trạng thái: <span class="static">Kich hoat</span></p>';
         html += '<p>Chức vụ: <span class="rank">A1</span></p>';
@@ -240,7 +240,7 @@ const second = 1000,
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24,
-    endCountDown = "12/22/2021 12:00:00";
+    endCountDown = "12/25/2021 12:00:00";
 const countDown = new Date(endCountDown).getTime();
 var start = setInterval(function () {
     const now = new Date().getTime(),
@@ -288,6 +288,7 @@ $(".delete_person").click(function () {
 })
 
 //Sửa thông tin người dân
+// sua lại giao diện
 $(".info_list .edit_person").click(function () {
     /**
      * Fetch lấy thông tin xong đổ vào mã bên dưới
@@ -298,13 +299,10 @@ $(".info_list .edit_person").click(function () {
         $(".edit").remove();
         $(".detail").remove();
         let html = '<tr class="edit"><td colspan="9"><h3>Sửa thông tin người dân</h3>';
-            html += '<div class="edit_info"><div class="left"><img src="./img/anhthe.jpeg" alt="">';   
-            html += '<p>Mã đơn vị quản lý: <span class="code">0101</span></p>';
-            html += '<p>Đơn vị quản lý: <span class="static">Xã Khai Thái</span></p>';
-            html += '<div class="bottom"><h5>Liên hệ</h5>';        
-            html += '<p>Địa chỉ: <span >Thôn Vĩnh Thượng</span></p><p>SĐT: <span>0123456789</span></p>';        
-            html += '<p>Email: <span>khoadamtam@gmail.com</span></p></div></div>' ;    
-            html += '<div class="right"><h4>Thông tin</h4>'
+            html += '<div class="edit_info">' ;    
+            html += '<div class="right"><h4>Thông tin</h4>';
+            html += '<p style="margin: 15px 0 5px 0;">Mã đơn vị quản lý: <span style="color: #d7d7d7;';
+            html += 'font-weight: bold;">0101</span></p><p style="">Đơn vị quản lý: <span style="color: var(--color-menu-hover);">xã Khai Thái</span></p>';
             html += '<div><label>Họ tên: </label> <input type="text" value="Đàm Tam Khoa"></div>';   
             html += '<div><label for="">Ngày sinh </label><input type="date" value="2001-11-11"></div>';
             html += '<div><label>Giới tính: </label> <input type="text" value="Nam"></div>';   
@@ -323,6 +321,7 @@ $(".info_list .edit_person").click(function () {
 })
 
 //Xem thông tin chi tiết người dân
+// sửa lại giao diện
 $(".info_list .detail_person").click(function () {
     /**
      * Fetch lấy thông tin xong đổ vào mã bên dưới
@@ -333,12 +332,7 @@ $(".info_list .detail_person").click(function () {
         $(".edit").remove();
         $(".detail").remove();
         let html = '<tr class="detail"><td colspan="9"><h3>Thông tin chi tiết</h3>';
-            html += '<div class="detail_info"><div class="left"><img src="./img/anhthe.jpeg" alt="">';   
-            html += '<p>Mã đơn vị quản lý: <span class="code">0101</span></p>';
-            html += '<p>Đơn vị quản lý: <span class="static">Xã Khai Thái</span></p>';
-            html += '<div class="bottom"><h5>Liên hệ</h5>';        
-            html += '<p>Địa chỉ: <span >Thôn Vĩnh Thượng</span></p><p>SĐT: <span>0123456789</span></p>';        
-            html += '<p>Email: <span>khoadamtam@gmail.com</span></p></div></div>';    
+            html += '<div class="detail_info">';    
             html += '<div class="right"><h4>Thông tin</h4>'
             html += '<div><label>Họ tên: </label> <input type="text" value="Đàm Tam Khoa"></div>';   
             html += '<div><label for="">Ngày sinh </label><input type="date" value="2001-11-11"></div>';
@@ -354,51 +348,3 @@ $(".info_list .detail_person").click(function () {
         $(this).parent().parent().parent().parent().after(html);
     }
 })
-
-
-
-//xử lí drop select tìm kiếm người dân
-let isDisplaySelect = [
-    true, true, true, true
-];
-//true la chua drop
-function dropSelectSearchCitizen(type) {
-    const elementSearchSelect = document.querySelectorAll(".person_info .select ul");
-    switch(type) {
-		case 'city':
-			i = 0;
-			break;
-		case 'district':
-			i = 1;
-			break;
-		case 'commune':
-            i = 2;
-			break;
-		case 'village':
-            i = 3;
-			break;
-	}
-    let index = 0;
-	do {
-		if(index === i) {
-			if(elementSearchSelect[i].className.indexOf('open') === -1) {
-				elementSearchSelect[i].classList.add("open");
-			} else {
-				elementSearchSelect[i].classList.remove("open");
-			}
-		} else {
-			elementSearchSelect[index].classList.remove("open");
-		}
-		++index;
-	} while (index < 4);
-}
-document.querySelector(".person_info ul button").onclick = function(e) {
-    let array = [];
-    const elementInput = document.querySelectorAll(".person_info .select ul input");
-    for(let element of elementInput) {
-        if(element.checked) {
-            array[array.length++] = element.value;
-        }
-    }
-    document.querySelector(".person_info .select ul input").style.display = 'none';
-}

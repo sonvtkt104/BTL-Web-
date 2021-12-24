@@ -14,7 +14,7 @@
             <a href="">citizenv</a>
         </div>
         <ul class = "navigation">
-            <li class = "home">
+            <li class = "home"">
                 <span class = "btn_navi open" onclick = "clickTabMenu(this, 'home')"><i class="fas fa-home"></i>Trang chủ</span>
             <li class = "input">
                 <span class = "btn_navi" onclick = "clickTabMenu(this, 'input')">
@@ -80,42 +80,54 @@
                     <table class="tbl_responsive">
                         <thead>
                             <tr>
-                                <th class = "remove_column_tb">ID</th>
-                                <th>Họ và tên</th>
-                                <th>Ngày sinh</th>
-                                <th>CMND</th>
+                                <th>ID</th>
+                                <th>Họ và tên
+                                    <span class = "sort_name" onclick="sortCitizen(this, 'name')">
+                                        <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                    </span>
+                                </th>
+                                <th>Ngày sinh
+                                    <span class = "sort_dob" onclick="sortCitizen(this, 'dob')">
+                                        <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                    </span>
+                                </th>
+                                <th class="responsive_ipad">CMND
+                                    <span class = "sort_id" onclick="sortCitizen(this, 'id')">
+                                        <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                    </span>
+                                </th>
                                 <th>Địa chỉ thường trú</th>
-                                <th class = "remove_column_tb">Tôn giáo</th>
-                                <th class = "remove_column_tb">Trình độ văn hóa</th>
-                                <th class = "remove_column_tb">Nghề nghiệp</th>
+                                <th class="responsive_ipad">Tôn giáo</th>
+                                <th class="responsive_ipad">Trình độ văn hóa</th>
+                                <th>Nghề nghiệp</th>
                                 <th>Thời gian nhập</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td data-title="ID" class = "remove_column_tb">1</td>
+                                <td data-title="ID">1</td>
                                 <td class = "info" data-title="Họ và tên">Đàm Tam Khoa</td>
                                 <td data-title="Ngày sinh">11/11/2001</td>
-                                <td data-title="CMND">00120103363</td>
+                                <td class="responsive_ipad" data-title="CMND">00120103363</td>
                                 <td class = "info_list_address" data-title="Địa chỉ thường cú">
                                     <span>Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội</span>
                                 </td>
-                                <td data-title="Tôn giáo" class = "remove_column_tb">Không</td>
-                                <td data-title="Trình độ văn hóa" class = "remove_column_tb">12/12</td>
-                                <td data-title="Nghề nghiệp" class = "remove_column_tb">Sinh viên</td>
+                                <td class="responsive_ipad" data-title="Tôn giáo">Không</td>
+                                <td class="responsive_ipad" data-title="Trình độ văn hóa">12/12</td>
+                                <td data-title="Nghề nghiệp">Sinh viên</td>
                                 <td data-title="Thời gian nhập">11/11/2001 12:00:00</td>
                             </tr>
                             <tr>
-                                <td data-title="ID" class = "remove_column_tb">1</td>
+                                <td data-title="ID">1</td>
                                 <td class = "info" data-title="Họ và tên">Đàm Tam Khoa</td>
                                 <td data-title="Ngày sinh">11/11/2001</td>
-                                <td data-title="CMND">00120103363</td>
+                                <td class="responsive_ipad" data-title="CMND">00120103363</td>
                                 <td class = "info_list_address" data-title="Địa chỉ thường cú">
                                     <span>Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội</span>
                                 </td>
-                                <td data-title="Tôn giáo" class = "remove_column_tb">Không</td>
-                                <td data-title="Trình độ văn hóa" class = "remove_column_tb">12/12</td>
-                                <td data-title="Nghề nghiệp" class = "remove_column_tb">Sinh viên</td>
+                                <td class="responsive_ipad" data-title="Tôn giáo">Không</td>
+                                <td class="responsive_ipad" data-title="Trình độ văn hóa">12/12</td>
+                                <td data-title="Nghề nghiệp">Sinh viên</td>
                                 <td data-title="Thời gian nhập">11/11/2001 12:00:00</td>
                             </tr>
                         </tbody>
@@ -140,108 +152,56 @@
             <div class="input_content">
                 <div class = "input_content_grid">
                     <h1>Phiếu khai báo thông tin cá nhân</h1>
-                    <div class = "name">
-                        <label for="name">Họ và tên </label>
-                        <input type="text" name = "name" id = "name">
-                    </div>
-                    <div class = "dob">
-                        <label for="dob">Ngày sinh </label>
-                        <input type="date" name="dob" id="dob">
-                    </div>
-                    <div class = "numberID">
-                        <label for="numberID">Số CMND</label>
-                        <input type="text" name = "numberID" id = "numberID">
-                    </div>
-                    <div class = "gender">
-                        <label for="female">Giới tính</label>
-                        <div>
-                            <input type="radio" name="female" id="female">
-                            <label for="female">Nữ</label>
-                            <input type="radio" name="female" id="male">
-                            <label for="male">Nam</label>
+                    <form action="#">
+                        <div class = "name">
+                            <label for="@">Tên </label>
+                            <input type="text" name = "name" id = "name">
                         </div>
-                    </div>
-                    <div class = "poo">
-                        <label for="poo">Quê quán</label>
-                        <input type="text" name = "poo" id = "poo">
-                    </div>
-                    <div class="address permanent">
-                        <div class = "title">
-                            <h2>Địa chỉ thường trú</h2>
-                            <hr>
+                        <div class = "surname">
+                            <label for="@">Họ </label>
+                            <input type="text" name = "surname" id = "surname">
                         </div>
-                        <div class = "postcode">
-                            <label>Mã địa chỉ: </label>
-                            <select>
-                                <option value="">Ha noi</option>
-                                <option value="">HACM</option>
-                                <option value="">Ha noi</option>
-                                <option value="">HACM</option>
-                            </select>
+                        <div class = "date">
+                            <label for="@">Ngày sinh </label>
+                            <input type="date" name="date" id="date">
                         </div>
-                        <div class = "village">
-                           <label>Thôn/Đường: </label>
-                           <input type="text" value="">
+                        <div class = "sex">
+                            <label for="sex">Giới tính</label>
+                            <div>
+                                <input type="radio" name="sex" id="female">
+                                <label for="female">Nữ</label>
+                                <input type="radio" name="sex" id="male">
+                                <label for="male">Nam</label>
+                            </div>
                         </div>
-                        <div class = "commune">
-                          <label>Xã/Phường: </label>
-                          <input type="text" value="">
+                        <div class = "phone">
+                            <label for="@">Số điện thoại</label>
+                            <input type="text" name = "phone" id = "phone">
                         </div>
-                        <div class = "district">
-                            <label>Quận/Huyện: </label>
-                            <input type="text" value="">
+                        <div class = "cmt">
+                            <label for="@">Số CMND</label>
+                            <input type="text" name = "cmt" id = "cmt">
                         </div>
-                        <div class = "city">
-                            <label>Tỉnh/Thành phố: </label>
-                            <input type="text" value="">
+                        <div class = "my_img">
+                            <label for="@">Ảnh thẻ</label>
+                            <input type="file" name = "my_img" id = "my_img" aria-label="File browser example">
                         </div>
-                    </div>
-                    <div class="address temporary">
-                        <div class = "title">
-                            <h2>Địa chỉ tạm trú</h2>
-                            <hr>
+                        <div class="address">
+                            <label for="@">Địa chỉ thường trú</label>
+                            <input type="text" name="address" id="address">
                         </div>
-                        <div class = "postcode">
-                            <label>Mã địa chỉ: </label>
-                            <select>
-                                <option value="">Ha noi</option>
-                                <option value="">HACM</option>
-                                <option value="">Ha noi</option>
-                                <option value="">HACM</option>
-                            </select>
+                        <div class="address_live">
+                            <label for="@">Địa chỉ hiện nay</label>
+                            <input type="text" name="address_live" id="address_live">
                         </div>
-                        <div class = "village">
-                           <label>Thôn/Đường: </label>
-                           <input type="text" value="">
+                        <div class = "more">
+                            <label for="@">Mô tả bản thân</label>
+                            <textarea name="more" id="more"></textarea>
                         </div>
-                        <div class = "commune">
-                          <label>Xã/Phường: </label>
-                          <input type="text" value="">
+                        <div class = "submit">
+                            <button type="submit">Nhập</button>
                         </div>
-                        <div class = "district">
-                            <label>Quận/Huyện: </label>
-                            <input type="text" value="">
-                        </div>
-                        <div class = "city">
-                            <label>Tỉnh/Thành phố: </label>
-                            <input type="text" value="">
-                        </div>
-                    </div>
-                    <div class="ethnicGroup">
-                        <label for="ethnicGroup">Tôn giáo</label>
-                        <input type="text" name="ethnicGroup" id="ethnicGroup">
-                    </div>
-                    <div class="eduLevel">
-                        <label for="eduLevel">Trình độ văn hóa</label>
-                        <input type="text" name="eduLevel" id="eduLevel">
-                    </div>
-                    <div class="job">
-                        <label for="job">Nghề nghiệp</label>
-                        <input type="text" name="job" id="job">
-                    </div>
-                    <div class = "submit" onclick = "submitFormAddCitizen()">
-                        <button type="submit">Nhập</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="input_footer">
@@ -329,27 +289,85 @@
                 <table class="tbl_responsive">
                     <thead>
                         <tr>
-                            <th class = "remove_column_tb">STT</th>
-                            <th>Tài khoản</th>
-                            <th class = "remove_column_tb">Mật khẩu</th>
-                            <th>Cấp bậc</th>
+                            <th>STT
+                                <span>
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
+                            <th>Tài khoản
+                                <span>
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
+                            <th>Mật khẩu</th>
+                            <th>Cấp bậc
+                                <span>
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
                             <th>Khu vực quản lí</th>
                             <th>Trạng thái</th>
-                            <th class = "remove_column_tb">Thời gian cấp quyền</th>
+                            <th>Thời gian cấp quyền
+                                <span>
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
                             <th>Tùy chọn</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-title="STT" class = "remove_column_tb">1</td>
+                            <td data-title="STT">1</td>
                             <td class = "view_username" data-title="Tai khoan">admin</td>
-                            <td class = "view_password remove_column_tb" data-title="Mat khau">
+                            <td class = "view_password" data-title="Mat khau">
                                 <p>1</p>
                             </td>
                             <td data-title="Cap bac">A1</td>
                             <td data-title="Khu vuc quan ly">Huyện Phú Xuyên - Thành phố Hà Nội</td>
                             <td data-title="Trang thai">Kích hoạt</td>
-                            <td data-title="Thoi gian cap quyen" class = "remove_column_tb">15/01/2022 23:59:59</td>
+                            <td data-title="Thoi gian cap quyen">15/01/2022 23:59:59</td>
+                            <td class = "action" data-title="Tuy chon">
+                                <div class = "list_action">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    <ul class = "">
+                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
+                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
+                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-title="STT">1</td>
+                            <td class = "view_username" data-title="Tai khoan">admin</td>
+                            <td class = "view_password" data-title="Mat khau">
+                                <p>1</p>
+                            </td>
+                            <td data-title="Cap bac">A1</td>
+                            <td data-title="Khu vuc quan ly">Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td data-title="Trang thai">Kích hoạt</td>
+                            <td data-title="Thoi gian cap quyen">15/01/2022 23:59:59</td>
+                            <td class = "action" data-title="Tuy chon">
+                                <div class = "list_action">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    <ul class = "">
+                                        <li class="grant_user"><i class="fas fa-street-view"></i>Cấp quyền</li>
+                                        <li class="delete_user"><i class="far fa-trash-alt"></i>Xóa</li>
+                                        <li class="detail_user"><i class="fas fa-user-tag"></i>Thông tin</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-title="STT">1</td>
+                            <td class = "view_username" data-title="Tai khoan">admin</td>
+                            <td class = "view_password" data-title="Mat khau">
+                                <p>1</p>
+                            </td>
+                            <td data-title="Cap bac">A1</td>
+                            <td data-title="Khu vuc quan ly">Huyện Phú Xuyên - Thành phố Hà Nội</td>
+                            <td data-title="Trang thai">Kích hoạt</td>
+                            <td data-title="Thoi gian cap quyen">15/01/2022 23:59:59</td>
                             <td class = "action" data-title="Tuy chon">
                                 <div class = "list_action">
                                     <i class="fas fa-ellipsis-h"></i>
@@ -414,94 +432,22 @@
                             </select>
                         </div>
                         <div class="search_select">
-                            <div class = "select select_city">
-                                <span onclick="dropSelectSearchCitizen('city')">
-                                    Tỉnh/Thành phố
-                                    <i class="fas fa-chevron-down"></i>
-                                </span>
-                                <ul>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">ha noi</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">ho chi minh</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">an giang</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">can tho</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">ha noi</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">ho chi minh</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">an giang</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">can tho</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">ha noi</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">ho chi minh</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">an giang</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" value="1" id = "select_city_1">
-                                        <label for="select_city_1">can tho</label>
-                                    </li>
-                                    <br>
-                                    <li class = "submit city"><button>Đồng ý</button></li>
-                                </ul>
-                            </div>
-                            <div class = "select select_district">
-                                <span onclick="dropSelectSearchCitizen('district')">
-                                    Tỉnh/Thành phố
-                                    <i class="fas fa-chevron-down"></i>
-                                </span>
-                                <ul>
-                                    <br>
-                                    <li class = "submit district"><button>Đồng ý</button></li>
-                                </ul>
-                            </div>
-                            <div class = "select select_commune">
-                                <span onclick="dropSelectSearchCitizen('commune')">
-                                    Tỉnh/Thành phố
-                                    <i class="fas fa-chevron-down"></i>
-                                </span>
-                                <ul>
-                                    <br>
-                                    <li class = "submit commune"><button>Đồng ý</button></li>
-                                </ul>
-                            </div>
-                            <div class = "select select_village">
-                                <span onclick="dropSelectSearchCitizen('village')">
-                                    Tỉnh/Thành phố
-                                    <i class="fas fa-chevron-down"></i>
-                                </span>
-                                <ul>
-                                    <br>
-                                    <li class = "submit village"><button>Đồng ý</button></li>
-                                </ul>
-                            </div>
+                        	<label>Tỉnh/Thành phố</label>
+		                        <select class="search_city">
+		                        	<option value="0">Tất cả</option>
+		                        </select>
+		                   <label>Quận/Huyện</label>
+		                        <select class="search_district">
+		                            <option value="0">Tất cả</option>
+		                        </select>
+                            <label>Xã/Phường</label>
+		                        <select class="search_commune">
+		                            <option value="0">Tất cả</option>
+		                        </select>
+		                    <label>Đường/Thôn</label>
+                            <select class="search_village">
+                                <option value="0">Tất cả</option>
+                            </select>
                         </div>
                     </div>
                     <div class="search" style="flex-basis: 100%;">
@@ -512,29 +458,41 @@
                 <table class="tbl_responsive">
                     <thead>
                         <tr>
-                            <th class = "remove_column_tb">STT</th>
-                            <th>Họ và tên</th>
-                            <th>Ngày sinh</th>
-                            <th>CMND</th>
+                            <th>ID</th>
+                            <th>Họ và tên
+                                <span class = "sort_name" onclick="sortCitizen(this, 'name')">
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
+                            <th>Ngày sinh
+                                <span class = "sort_dob" onclick="sortCitizen(this, 'dob')">
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
+                            <th class="responsive_ipad" >CMND
+                                <span class = "sort_id" onclick="sortCitizen(this, 'id')">
+                                    <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>
+                                </span>
+                            </th>
                             <th>Địa chỉ thường trú</th>
-                            <th class = "remove_column_tb">Tôn giáo</th>
-                            <th class = "remove_column_tb">Trình độ văn hóa</th>
-                            <th class = "remove_column_tb">Nghề nghiệp</th>
+                            <th class="responsive_ipad">Tôn giáo</th>
+                            <th class="responsive_ipad">Trình độ văn hóa</th>
+                            <th>Nghề nghiệp</th>
                             <th>Tùy chọn</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-title="ID" class = "remove_column_tb">1</td>
-                            <td class = "info" data-title="Ho va ten" >Đàm Tam Khoa</td>
+                            <td data-title="ID">1</td>
+                            <td class = "info" data-title="Ho va ten">Đàm Tam Khoa</td>
                             <td data-title="Ngay sinh">11/11/2001</td>
-                            <td data-title="CMND">00120103363</td>
+                            <td class="responsive_ipad" data-title="CMND">00120103363</td>
                             <td class = "info_list_address" data-title="Dia chi thuong chu">
                                 Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội
                             </td>
-                            <td data-title="Ton giao" class = "remove_column_tb">Không</td>
-                            <td data-title="Trinh do van hoa" class = "remove_column_tb">12/12</td>
-                            <td data-title="Nghe nghiep" class = "remove_column_tb">Sinh viên</td>
+                            <td class="responsive_ipad" data-title="Ton giao">Không</td>
+                            <td class="responsive_ipad" data-title="Trinh do van hoa">12/12</td>
+                            <td data-title="Nghe nghiep">Sinh viên</td>
                             <td class = "action" data-title="Tuy chon">
                                 <div class="list_action">
                                     <i class="fas fa-ellipsis-h"></i>
@@ -547,16 +505,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td data-title="ID" class = "remove_column_tb">1</td>
+                            <td data-title="ID">1</td>
                             <td class = "info" data-title="Ho va ten">Đàm Tam Khoa</td>
                             <td data-title="Ngay sinh">11/11/2001</td>
-                            <td data-title="CMND">00120103363</td>
+                            <td class="responsive_ipad" data-title="CMND">00120103363</td>
                             <td class = "info_list_address" data-title="Dia chi thuong chu">
                                 Vĩnh Thượng - Khai Thái - Phú Xuyên Hà Nội
                             </td>
-                            <td data-title="Ton giao" class = "remove_column_tb">Không</td>
-                            <td data-title="Trinh do van hoa" class = "remove_column_tb">12/12</td>
-                            <td data-title="Nghe nghiep" class = "remove_column_tb">Sinh viên</td>
+                            <td class="responsive_ipad" data-title="Ton giao">Không</td>
+                            <td class="responsive_ipad" data-title="Trinh do van hoa">12/12</td>
+                            <td data-title="Nghe nghiep">Sinh viên</td>
                             <td class = "action" data-title="Tuy chon">
                                 <div class="list_action">
                                     <i class="fas fa-ellipsis-h"></i>
@@ -594,6 +552,60 @@
             </div>
         </div>
 
+        <div class = "info_model">
+            <div class = "model_header">
+                <p>Danh sách người dân</p>
+                <span>CitizenV<i class="fas fa-chevron-right"></i>Thông tin cá nhân<i class="fas fa-chevron-right"></i>Nguyễn Văn A</span>
+            </div>
+            <div class="model_content">
+                <img src="img/anhthe.jpeg" alt="">
+                <p class="title">Phiếu điều tra dân số ban hành kèm theo quyết định của cơ quan điều tra dân số CitizenV</p>
+                <p>Cơ quan đơn vị điều tra dân số CitizenV</p>
+                <p>Mã đơn vị quản lí cá nhân: <strong>ABC001</strong></p>
+                <p>Đơn vị quản lí cá nhân: <strong>Xã Khai Thái</strong></p>
+                <h1>Thông tin của Nguyễn Văn A</h1>
+                <div>
+                    <label for="@">Họ tên: </label>
+                    <input type="text" name="info_name" id="info_name" value="Nguyễn Văn A">
+                </div>
+                <div>
+                    <label for="@">Ngày sinh: </label>
+                    <input type="date" name="info_date" id="info_date" value="2001-11-11">
+                </div>
+                <div>
+                    <label for="@">Giới tính: </label>
+                    <input type="text" name="info_sex" id="info_sex" value="Nam">
+                </div>
+                <div>
+                    <label for="@">Số điện thoại: </label>
+                    <input type="text" name="info_phone" id="info_phone" value="012345678">
+                </div>
+                <div>
+                    <label for="@">Số CMND: </label>
+                    <input type="text" name="info_cmt" id="info_cmt" value="012345678910">
+                </div>
+                <div>
+                    <label for="@">Địa chỉ thường chú: </label>
+                    <input type="text" name="info_address" id="info_address" value="Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội">
+                </div>
+                <div>
+                    <label for="@">Địa chỉ hiện nay: </label>
+                    <input type="text" name="info_address_live" id="info_address_live" value="Vĩnh Thượng, Khai Thái, Phú Xuyên, Hà Nội">
+                </div>
+                <div class = "attribute">
+                    <button>Tải về<i class="fas fa-cloud-download-alt"></i></button>
+                    <button>In<i class="fas fa-print"></i></button>
+                </div>
+            </div>
+            <div class="model_footer">
+                <p>Created by <a href="">name@gmail.com</a></p>
+                <ul>
+                    <li><a href="#">Thông tin về chúng tôi</a></li>
+                    <li><a href="#">Trợ giúp</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="my.js"></script>
